@@ -30,11 +30,9 @@ const App: React.FC = () => {
     if (language) {
       import(`code-example/txt/sample.${language}.txt`)
         .then((code) => {
-          console.log('code:', code.default);
-          setValue(code.default);
+          setValue(code.default || '');
         })
         .catch((err) => {
-          console.log('err:', err);
           setValue('');
         });
     }

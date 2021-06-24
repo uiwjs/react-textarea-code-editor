@@ -24,6 +24,3 @@ export function htmlEncode(sHtml: string) {
     (c: string) => (({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' } as Record<string, string>)[c]),
   );
 }
-
-export const resultString = (text: string) =>
-  text.replace(/<code\sclass="language-(html|css|js)">/, '').replace(/<\/code>/, '');

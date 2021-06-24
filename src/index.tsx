@@ -16,16 +16,8 @@ export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HT
 }
 
 export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((props, ref) => {
-  const {
-    prefixCls = 'w-tc-editor',
-    value: _,
-    padding = 10,
-    language,
-    className,
-    style,
-    onChange = () => null,
-    ...other
-  } = props;
+  const { prefixCls = 'w-tc-editor', value: _, padding = 10, language, className, style, onChange, ...other } = props;
+
   const [value, setValue] = useState(props.value || '');
   useEffect(() => setValue(props.value || ''), [props.value]);
 
@@ -35,6 +27,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     paddingBottom: padding,
     paddingLeft: padding,
   };
+
   const htmlStr = useMemo(
     () =>
       processHtml(
@@ -74,7 +67,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
         ref={ref}
         onChange={(evn) => {
           setValue(evn.target.value);
-          onChange(evn);
+          onChange && onChange(evn);
         }}
         className={`${prefixCls}-text`}
         value={value}
