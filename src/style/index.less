@@ -42,7 +42,6 @@
     .token.constant,
     .token.deleted,
     .token.number,
-    .token.property,
     .token.symbol {
       color: #e91e63;
     }
@@ -66,6 +65,7 @@
     .token.atrule,
     .token.attr-value,
     .token.attr-name,
+    .token.property,
     .token.keyword {
       color: #3f51b5;
     }
@@ -90,21 +90,8 @@
     .attr-name {
       color: #005cc5;
     }
-  }
-
-  code[class*='language-css'],
-  pre[class*='language-css'] {
-    color: #005cc5;
-    .token.property,
-    .token.color {
-      color: #005cc5;
-    }
-
-    .unit {
-      color: #d73a49;
-    }
-
-    .token.selector .class {
+    .token.selector .class,
+    .token.class-name {
       color: #6f42c1;
     }
   }
