@@ -22,16 +22,21 @@ const App: React.FC = () => {
         });
     }
   }, [language]);
+  // @ts-ignore
+  const version = VERSION;
   return (
     <div className="App">
       <GitHubCorners fixed href="https://github.com/uiwjs/react-textarea-code-editor" />
-      <h1 className="App-title">React Textarea Code Editor</h1>
+      <h1 className="App-title">
+        React Textarea Code Editor
+        <sup>{version}</sup>
+      </h1>
       <div className="App-editor">
         <TextareaCodeEditor
           autoFocus
           value={value}
           language={language}
-          style={{ backgroundColor: '#fafafa', outline: 0, fontSize: 14 }}
+          style={{ backgroundColor: '#f5f5f5', outline: 0, fontSize: 14 }}
           onChange={(evn) => setValue(evn.target.value)}
         />
       </div>

@@ -15,6 +15,17 @@ body {
   text-align: center;
 }
 
+.App-title sup {
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  color: #ababab;
+  background-color: #e6e6e6;
+  padding: 0 3px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
 .App-editor {
   height: 260px;
   overflow: auto;
