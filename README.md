@@ -14,6 +14,9 @@ $ npm i @uiw/react-textarea-code-editor
 
 ## Usage
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-textarea-code-editor-for-example-mcebp?fontsize=14&hidenavigation=1&theme=dark)
+[![Open in Github gh-pages](https://img.shields.io/badge/Open%20In-Github%20gh--pages-blue?logo=github)](https://uiwjs.github.io/react-textarea-code-editor/)
+
 ```jsx
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
@@ -24,11 +27,13 @@ function App() {
   return (
     <CodeEditor
       value={code}
-      onChange={(env) => setCode(evn.target.value)}
-      padding={24}
+      language="js"
+      onChange={(evn) => setCode(evn.target.value)}
+      padding={15}
       style={{
-        fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
         fontSize: 12,
+        backgroundColor: "#f5f5f5",
+        fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
     />
   );

@@ -38,7 +38,6 @@ const App: React.FC = () => {
           language={language}
           style={{
             backgroundColor: '#f5f5f5',
-            outline: 0,
             fontSize: 14,
             fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
           }}
