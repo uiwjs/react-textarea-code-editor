@@ -63,10 +63,31 @@ it('TextareaCodeEditor language="html"', async () => {
         }
         if (child.type === 'div') {
           expect(child.props.style).toEqual({
+            background: 'none',
+            border: 0,
+            boxSizing: 'inherit',
+            display: 'inherit',
+            fontFamily: 'inherit',
+            fontSize: 'inherit',
+            fontStyle: 'inherit',
+            fontVariantLigatures: 'inherit',
+            fontWeight: 'inherit',
+            letterSpacing: 'inherit',
+            lineHeight: 'inherit',
+            margin: 0,
+            minHeight: 16,
+            outline: 0,
+            overflowWrap: 'break-word',
             paddingTop: 10,
             paddingRight: 10,
             paddingBottom: 10,
             paddingLeft: 10,
+            tabSize: 'inherit',
+            textIndent: 'inherit',
+            textRendering: 'inherit',
+            textTransform: 'inherit',
+            whiteSpace: 'pre-wrap',
+            wordBreak: 'keep-all',
           });
           expect(child.props.className).toEqual('w-tc-editor-preview language-html');
           expect(typeof child.props.dangerouslySetInnerHTML).toEqual('object');
