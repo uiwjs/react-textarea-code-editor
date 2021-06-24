@@ -8,23 +8,8 @@ import TextareaCodeEditor from '../';
 import MDStr from '../README.md';
 import './App.css';
 
-const codeStr = `import React from "react";
-import CodeEditor from '@uiw/react-textarea-code-editor';
-import ReactDOM from "react-dom";
-
-function App() {
-  return (
-    <CodeEditor
-      value="console.log('Hello World')"
-      language="js"
-    />
-  );
-}
-
-ReactDOM.render(<App />, document.getElementById("root"));`;
-
 const App: React.FC = () => {
-  const [value, setValue] = useState(codeStr);
+  const [value, setValue] = useState('');
   const [language, setLanguage] = useState('jsx');
   useEffect(() => {
     if (language) {
@@ -43,10 +28,10 @@ const App: React.FC = () => {
       <h1 className="App-title">React Textarea Code Editor</h1>
       <div className="App-editor">
         <TextareaCodeEditor
-          language={language}
-          value={value}
-          style={{ backgroundColor: '#fafafa', outline: 0 }}
           autoFocus
+          value={value}
+          language={language}
+          style={{ backgroundColor: '#fafafa', outline: 0, fontSize: 14 }}
           onChange={(evn) => setValue(evn.target.value)}
         />
       </div>

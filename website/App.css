@@ -16,12 +16,14 @@ body {
 }
 
 .App-editor {
-  height: 220px;
+  height: 260px;
   overflow: auto;
+  margin-top: 50px !important;
 }
 
 .App-tools {
   margin-top: 5px;
+  margin-bottom: 50px !important;
 }
 
 .App-tools,
