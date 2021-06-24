@@ -2,6 +2,8 @@ React Textarea Code Editor
 ===
 <!--rehype:style=display:none;-->
 
+[![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/uiwjs/react-textarea-code-editor/badge.svg?branch=main)](https://coveralls.io/github/uiwjs/react-textarea-code-editor?branch=main) [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor) [![npm version](https://img.shields.io/npm/v/@uiw/react-textarea-code-editor.svg)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)
+
 A simple code editor with syntax highlighting.
 
 ## Install
