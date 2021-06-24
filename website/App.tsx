@@ -36,7 +36,12 @@ const App: React.FC = () => {
           autoFocus
           value={value}
           language={language}
-          style={{ backgroundColor: '#f5f5f5', outline: 0, fontSize: 14 }}
+          style={{
+            backgroundColor: '#f5f5f5',
+            outline: 0,
+            fontSize: 14,
+            fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+          }}
           onChange={(evn) => setValue(evn.target.value)}
         />
       </div>
