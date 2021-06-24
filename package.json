@@ -21,7 +21,7 @@
     "css:build:dist": "compile-less -d src --combine lib/dist.css --rm-global",
     "ts:watch": "tsbb watch --env-name esm:dev --env-name cjs --target react",
     "ts:build": "tsbb build --target react",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,css,md,json}\"",
     "test": "kkt test --env=jsdom --app-src=./website",
     "test:coverage": "kkt test --env=jsdom --coverage --app-src=./website"
   },
@@ -36,7 +36,7 @@
     "src"
   ],
   "lint-staged": {
-    "*.{js,jsx,tsx,ts,less,md,json}": [
+    "*.{js,jsx,tsx,ts,less,css,md,json}": [
       "prettier --write"
     ]
   },
