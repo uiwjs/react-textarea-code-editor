@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A simple code editor with syntax highlighting.",
   "homepage": "https://uiwjs.github.io/react-textarea-code-editor/",
-  "private": true,
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "scripts": {
