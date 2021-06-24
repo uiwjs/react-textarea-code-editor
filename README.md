@@ -53,6 +53,10 @@ interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextA
    * Optional padding for code. Default: `10`.
    */
   padding?: number;
+  /**
+   * The minimum height of the editor. Default: `16`.
+   */
+  minHeight?: number;
 }
 ```
 

@@ -13,10 +13,25 @@ export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HT
    * Optional padding for code. Default: `10`.
    */
   padding?: number;
+  /**
+   * The minimum height of the editor. Default: `16`.
+   */
+  minHeight?: number;
 }
 
 export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((props, ref) => {
-  const { prefixCls = 'w-tc-editor', value: _, padding = 10, language, className, style, onChange, ...other } = props;
+  const {
+    prefixCls = 'w-tc-editor',
+    value: _,
+    padding = 10,
+    minHeight = 16,
+    placeholder,
+    language,
+    className,
+    style,
+    onChange,
+    ...other
+  } = props;
 
   const [value, setValue] = useState(props.value || '');
   useEffect(() => setValue(props.value || ''), [props.value]);
@@ -33,14 +48,14 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
       processHtml(
         `<pre aria-hidden=true><code ${language ? `class="language-${language}"` : ''} >${htmlEncode(
           String(value || ''),
-        )}</code></pre>`,
+        )}</code><br /></pre>`,
       ),
     [value, language],
   );
   const preView = useMemo(
     () => (
       <div
-        style={{ ...contentStyle }}
+        style={{ ...styles.editor, ...contentStyle, minHeight }}
         className={`${prefixCls}-preview ${language ? `language-${language}` : ''}`}
         dangerouslySetInnerHTML={{
           __html: htmlStr,
@@ -59,10 +74,13 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
         spellCheck="false"
         autoCapitalize="off"
         {...other}
+        placeholder={placeholder}
         style={{
           ...styles.editor,
           ...styles.textarea,
           ...contentStyle,
+          minHeight,
+          ...(placeholder && !value ? { WebkitTextFillColor: 'inherit' } : {}),
         }}
         ref={ref}
         onChange={(evn) => {

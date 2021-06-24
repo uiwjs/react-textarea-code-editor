@@ -36,6 +36,8 @@ const App: React.FC = () => {
           autoFocus
           value={value}
           language={language}
+          minHeight={80}
+          placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`}
           style={{
             backgroundColor: '#f5f5f5',
             fontSize: 14,
