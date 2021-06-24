@@ -1,0 +1,2 @@
+(this["webpackJsonp@uiw/react-textarea-code-editor"]=this["webpackJsonp@uiw/react-textarea-code-editor"]||[]).push([[36],{623:function(e,t,a){"use strict";a.r(t),t.default=" = CALCULATE(SUM(Sales[SalesAmount]), PREVIOUSQUARTER(Calendar[DateKey]))"}}]);
+//# sourceMappingURL=36.7b6e4c3b.chunk.js.map
