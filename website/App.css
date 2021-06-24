@@ -25,14 +25,12 @@ body {
   margin-top: 5px;
 }
 
-.App-tools, .App-editor {
-  max-width: 560px;
+.App-tools, .App-editor, .info {
+  max-width: 593px;
   margin: 0 auto;
 }
 
 .info {
-  width: 560px;;
-  margin: 0 auto;
   padding-top: 35px;
   padding-bottom: 60px;
 }
