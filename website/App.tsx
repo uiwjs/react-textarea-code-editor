@@ -39,7 +39,7 @@ const App: React.FC = () => {
   }, [language]);
   return (
     <div className="App">
-      <GitHubCorners fixed href="https://github.com/kktjs/kkt" />
+      <GitHubCorners fixed href="https://github.com/uiwjs/react-textarea-code-editor" />
       <h1 className="App-title">React Textarea Code Editor</h1>
       <div className="App-editor">
         <TextareaCodeEditor
