@@ -2,7 +2,7 @@ React Textarea Code Editor
 ===
 <!--rehype:style=display:none;-->
 
-A simple no-frills code editor with syntax highlighting.
+A simple code editor with syntax highlighting.
 
 ## Install
 
