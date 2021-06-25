@@ -1,2 +1,0 @@
-(this["webpackJsonp@uiw/react-textarea-code-editor"]=this["webpackJsonp@uiw/react-textarea-code-editor"]||[]).push([[18],{605:function(e,r,t){"use strict";t.r(r),r.default='(* Sample F# application *)\r\n[<EntryPoint>]\r\nlet main argv = \r\n    printfn "%A" argv\r\n    System.Console.WriteLine("Hello from F#")\r\n    0 // return an integer exit code\r\n\r\n//-------------------------------------------------------- \r\n'}}]);
-//# sourceMappingURL=18.08a21d9d.chunk.js.map
