@@ -6,6 +6,13 @@ React Textarea Code Editor
 
 A simple code editor with syntax highlighting.
 
+**`Features:`**
+
+- ☕️ Automatic syntax highlighting.
+- 🐲 Automatic indent on new lines.
+- 🩲 Indent line or selected text by pressing tab key, with customizable indentation.
+- 🌸 Wrap selected text in parens, <kbd>[]</kbd>, <kbd>()</kbd>, <kbd><></kbd>, <kbd>{}</kbd>, <kbd>""</kbd>, <kbd>''</kbd>, <kbd>""</kbd>, <kbd>``</kbd>
+
 ## Install
 
 ```bash
