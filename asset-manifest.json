@@ -5,9 +5,9 @@
     "main.js.map": "/react-textarea-code-editor/static/js/main.c10a9fa3.chunk.js.map",
     "runtime-main.js": "/react-textarea-code-editor/static/js/runtime-main.bc3594e8.js",
     "runtime-main.js.map": "/react-textarea-code-editor/static/js/runtime-main.bc3594e8.js.map",
-    "static/css/2.d2b015bb.chunk.css": "/react-textarea-code-editor/static/css/2.d2b015bb.chunk.css",
-    "static/js/2.03c2d80f.chunk.js": "/react-textarea-code-editor/static/js/2.03c2d80f.chunk.js",
-    "static/js/2.03c2d80f.chunk.js.map": "/react-textarea-code-editor/static/js/2.03c2d80f.chunk.js.map",
+    "static/css/2.07e827ea.chunk.css": "/react-textarea-code-editor/static/css/2.07e827ea.chunk.css",
+    "static/js/2.7559b3b5.chunk.js": "/react-textarea-code-editor/static/js/2.7559b3b5.chunk.js",
+    "static/js/2.7559b3b5.chunk.js.map": "/react-textarea-code-editor/static/js/2.7559b3b5.chunk.js.map",
     "static/js/3.c4423497.chunk.js": "/react-textarea-code-editor/static/js/3.c4423497.chunk.js",
     "static/js/3.c4423497.chunk.js.map": "/react-textarea-code-editor/static/js/3.c4423497.chunk.js.map",
     "static/js/4.699203d6.chunk.js": "/react-textarea-code-editor/static/js/4.699203d6.chunk.js",
@@ -151,14 +151,14 @@
     "static/js/73.ac4057e2.chunk.js": "/react-textarea-code-editor/static/js/73.ac4057e2.chunk.js",
     "static/js/73.ac4057e2.chunk.js.map": "/react-textarea-code-editor/static/js/73.ac4057e2.chunk.js.map",
     "index.html": "/react-textarea-code-editor/index.html",
-    "static/css/2.d2b015bb.chunk.css.map": "/react-textarea-code-editor/static/css/2.d2b015bb.chunk.css.map",
+    "static/css/2.07e827ea.chunk.css.map": "/react-textarea-code-editor/static/css/2.07e827ea.chunk.css.map",
     "static/css/main.c25d519a.chunk.css.map": "/react-textarea-code-editor/static/css/main.c25d519a.chunk.css.map",
-    "static/js/2.03c2d80f.chunk.js.LICENSE.txt": "/react-textarea-code-editor/static/js/2.03c2d80f.chunk.js.LICENSE.txt"
+    "static/js/2.7559b3b5.chunk.js.LICENSE.txt": "/react-textarea-code-editor/static/js/2.7559b3b5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bc3594e8.js",
-    "static/css/2.d2b015bb.chunk.css",
-    "static/js/2.03c2d80f.chunk.js",
+    "static/css/2.07e827ea.chunk.css",
+    "static/js/2.7559b3b5.chunk.js",
     "static/css/main.c25d519a.chunk.css",
     "static/js/main.c10a9fa3.chunk.js"
   ]
