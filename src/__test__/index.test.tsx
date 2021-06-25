@@ -256,3 +256,32 @@ it('TextareaCodeEditor onKeyDown Tab Multi-Line 2 Input', async () => {
     });
   }
 });
+
+it('TextareaCodeEditor onKeyDown Enter Input', async () => {
+  const example = `\nfunction stopPropagation(e) {\n  e.stopPropagation();\n  e.preventDefault();\n}`;
+  const expected = `\nfunction stopPropagation(e) {\n \n  e.stopPropagation();\n  e.preventDefault();\n}`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('enter');
+        console.log(JSON.stringify((evn.target as any).value));
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(32, 32);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: 'Enter',
+      code: 'Enter',
+      charCode: 13,
+    });
+  }
+});

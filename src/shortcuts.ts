@@ -15,5 +15,10 @@ export default function shortcuts(e: React.KeyboardEvent<HTMLTextAreaElement>) {
       api.insertText('  ').position(api.start + 2, api.end);
     }
     api.notifyChange();
+  } else if (e.code && e.code.toLowerCase() === 'enter') {
+    stopPropagation(e);
+    const indent = `\n${api.getIndentText()}`;
+    api.insertText(indent).position(api.start + indent.length, api.start + indent.length);
+    api.notifyChange();
   }
 }

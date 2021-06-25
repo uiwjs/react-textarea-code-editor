@@ -44,6 +44,14 @@ export class SelectionText {
     }
     return start;
   }
+  /** Indent on new lines */
+  getIndentText() {
+    const start = this.getLineStartNumber();
+    const str = this.getSelectedValue(start);
+    let indent = '';
+    str.replace(/(^(\s)+)/, (str, old) => (indent = old));
+    return indent;
+  }
   lineStarInstert(text: string = '') {
     if (text) {
       const oldStart = this.start;
