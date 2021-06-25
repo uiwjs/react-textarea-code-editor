@@ -20,5 +20,38 @@ export default function shortcuts(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     const indent = `\n${api.getIndentText()}`;
     api.insertText(indent).position(api.start + indent.length, api.start + indent.length);
     api.notifyChange();
+  } else if (
+    e.code &&
+    /^(quote|backquote|bracketleft|digit9|comma)$/.test(e.code.toLowerCase()) &&
+    api.getSelectedValue()
+  ) {
+    stopPropagation(e);
+    const val = api.getSelectedValue();
+    let txt = '';
+    switch (e.code.toLowerCase()) {
+      case 'quote':
+        txt = `'${val}'`;
+        if (e.shiftKey) {
+          txt = `"${val}"`;
+        }
+        break;
+      case 'backquote':
+        txt = `\`${val}\``;
+        break;
+      case 'bracketleft':
+        txt = `[${val}]`;
+        if (e.shiftKey) {
+          txt = `{${val}}`;
+        }
+        break;
+      case 'digit9':
+        txt = `(${val})`;
+        break;
+      case 'comma':
+        txt = `<${val}>`;
+        break;
+    }
+    api.insertText(txt);
+    api.notifyChange();
   }
 }

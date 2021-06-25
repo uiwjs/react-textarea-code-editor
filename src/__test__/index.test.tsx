@@ -284,3 +284,203 @@ it('TextareaCodeEditor onKeyDown Enter Input', async () => {
     });
   }
 });
+
+it('TextareaCodeEditor onKeyDown Input `()`', async () => {
+  const example = `/** Hello Wold **/`;
+  const expected = `/** (Hello) Wold **/`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('digit9');
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(4, 9);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: '(',
+      code: 'Digit9',
+      charCode: 57,
+      shiftKey: true,
+    });
+  }
+});
+
+it('TextareaCodeEditor onKeyDown Input `<>`', async () => {
+  const example = `/** Hello Wold **/`;
+  const expected = `/** <Hello> Wold **/`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('comma');
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(4, 9);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: '<',
+      code: 'Comma',
+      charCode: 188,
+      shiftKey: true,
+    });
+  }
+});
+
+it('TextareaCodeEditor onKeyDown Input `[]`', async () => {
+  const example = `/** Hello Wold **/`;
+  const expected = `/** [Hello] Wold **/`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('bracketleft');
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(4, 9);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: '[',
+      code: 'BracketLeft',
+      charCode: 219,
+    });
+  }
+});
+
+it('TextareaCodeEditor onKeyDown Input `{}`', async () => {
+  const example = `/** Hello Wold **/`;
+  const expected = `/** {Hello} Wold **/`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('bracketleft');
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(4, 9);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: '{',
+      code: 'BracketLeft',
+      charCode: 219,
+      shiftKey: true,
+    });
+  }
+});
+
+it("TextareaCodeEditor onKeyDown Input `''`", async () => {
+  const example = `/** Hello Wold **/`;
+  const expected = `/** 'Hello' Wold **/`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('quote');
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(4, 9);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: "'",
+      code: 'Quote',
+      charCode: 222,
+    });
+  }
+});
+
+it('TextareaCodeEditor onKeyDown Input `""`', async () => {
+  const example = `/** Hello Wold **/`;
+  const expected = `/** "Hello" Wold **/`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('quote');
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(4, 9);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: '"',
+      code: 'Quote',
+      charCode: 222,
+      shiftKey: true,
+    });
+  }
+});
+
+it('TextareaCodeEditor onKeyDown Input ``', async () => {
+  const example = `/** Hello Wold **/`;
+  const expected = `/** \`Hello\` Wold **/`;
+  const {
+    container: { firstChild },
+  } = render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      autoFocus
+      value={example}
+      onKeyDown={(evn) => {
+        expect(evn.code.toLowerCase()).toEqual('backquote');
+        expect((evn.target as any).value).toEqual(expected);
+      }}
+    />,
+  );
+
+  if (firstChild && firstChild.firstChild) {
+    (firstChild.firstChild as any).setSelectionRange(4, 9);
+    fireEvent.keyDown(firstChild.firstChild, {
+      key: '`',
+      code: 'Backquote',
+      charCode: 192,
+    });
+  }
+});

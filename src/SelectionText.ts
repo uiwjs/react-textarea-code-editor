@@ -52,7 +52,7 @@ export class SelectionText {
     str.replace(/(^(\s)+)/, (str, old) => (indent = old));
     return indent;
   }
-  lineStarInstert(text: string = '') {
+  lineStarInstert(text: string) {
     if (text) {
       const oldStart = this.start;
       const start = this.getLineStartNumber();
@@ -68,7 +68,7 @@ export class SelectionText {
     }
     return this;
   }
-  lineStarRemove(text: string = '') {
+  lineStarRemove(text: string) {
     if (text) {
       const oldStart = this.start;
       const start = this.getLineStartNumber();
