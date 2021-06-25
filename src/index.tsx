@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { processHtml, htmlEncode } from './utils';
 import shortcuts from './shortcuts';
 import * as styles from './styles';
@@ -39,6 +39,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
   const [value, setValue] = useState(props.value || '');
   useEffect(() => setValue(props.value || ''), [props.value]);
   const textRef = useRef<HTMLTextAreaElement>(null);
+  useImperativeHandle<HTMLTextAreaElement, HTMLTextAreaElement>(ref, () => textRef.current!);
 
   const contentStyle = {
     paddingTop: padding,
