@@ -270,7 +270,6 @@ it('TextareaCodeEditor onKeyDown Enter Input', async () => {
       value={example}
       onKeyDown={(evn) => {
         expect(evn.code.toLowerCase()).toEqual('enter');
-        console.log(JSON.stringify((evn.target as any).value));
         expect((evn.target as any).value).toEqual(expected);
       }}
     />,
