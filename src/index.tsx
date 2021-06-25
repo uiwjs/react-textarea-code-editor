@@ -1,7 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { processHtml, htmlEncode } from './utils';
+import shortcuts from './shortcuts';
 import * as styles from './styles';
 import './style/index.less';
+
+export * from './SelectionText';
 
 export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   prefixCls?: string;
@@ -35,6 +38,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
 
   const [value, setValue] = useState(props.value || '');
   useEffect(() => setValue(props.value || ''), [props.value]);
+  const textRef = useRef<HTMLTextAreaElement>(null);
 
   const contentStyle = {
     paddingTop: padding,
@@ -75,6 +79,10 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
         autoCapitalize="off"
         {...other}
         placeholder={placeholder}
+        onKeyDown={(evn) => {
+          shortcuts(evn);
+          other.onKeyDown && other.onKeyDown(evn);
+        }}
         style={{
           ...styles.editor,
           ...styles.textarea,
@@ -82,7 +90,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
           minHeight,
           ...(placeholder && !value ? { WebkitTextFillColor: 'inherit' } : {}),
         }}
-        ref={ref}
+        ref={textRef}
         onChange={(evn) => {
           setValue(evn.target.value);
           onChange && onChange(evn);

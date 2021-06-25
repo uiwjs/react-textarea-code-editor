@@ -28,6 +28,7 @@ function App() {
     <CodeEditor
       value={code}
       language="js"
+      placeholder="Please enter JS code."
       onChange={(evn) => setCode(evn.target.value)}
       padding={15}
       style={{

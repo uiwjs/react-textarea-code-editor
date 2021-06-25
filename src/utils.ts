@@ -24,3 +24,8 @@ export function htmlEncode(sHtml: string) {
     (c: string) => (({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' } as Record<string, string>)[c]),
   );
 }
+
+export function stopPropagation(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+  e.stopPropagation();
+  e.preventDefault();
+}
