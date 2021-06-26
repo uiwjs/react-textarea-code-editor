@@ -40,6 +40,18 @@
       "prettier --write"
     ]
   },
+  "keywords": [
+    "react",
+    "textarea",
+    "textarea-editor",
+    "textarea-code-editor",
+    "code-editor",
+    "code",
+    "highlighting",
+    "uiw",
+    "uiwjs",
+    "editor"
+  ],
   "peerDependencies": {
     "@babel/runtime": ">=7.10.0",
     "react": ">=16.9.0",
