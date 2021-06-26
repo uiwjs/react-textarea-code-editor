@@ -11,11 +11,23 @@ import './App.css';
 const App: React.FC = () => {
   const [value, setValue] = useState('');
   const [language, setLanguage] = useState('jsx');
+  const [lang, setLang] = useState('jsx');
   useEffect(() => {
     if (language) {
       import(`code-example/txt/sample.${language}.txt`)
         .then((code) => {
           setValue(code.default || '');
+          let str = language;
+          if (/^(mysql|pgsql)$/.test(language)) {
+            str = 'sql';
+          }
+          if (/^(objective-c)$/.test(language)) {
+            str = 'objc';
+          }
+          if (/^(vue)$/.test(language)) {
+            str = 'html';
+          }
+          setLang(str);
         })
         .catch((err) => {
           setValue('');
@@ -35,7 +47,7 @@ const App: React.FC = () => {
         <TextareaCodeEditor
           autoFocus
           value={value}
-          language={language}
+          language={lang}
           minHeight={80}
           placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`}
           style={{
