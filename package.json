@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.14.6",
-    "@mapbox/rehype-prism": "0.6.0",
+    "@mapbox/rehype-prism": "0.7.0",
     "rehype": "11.0.0"
   },
   "devDependencies": {
