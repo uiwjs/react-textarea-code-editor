@@ -74,7 +74,7 @@
     "@uiw/react-github-corners": "1.4.0",
     "@uiw/react-markdown-preview": "3.2.2",
     "code-example": "3.0.6",
-    "compile-less-cli": "1.8.0",
+    "compile-less-cli": "1.8.1",
     "husky": "6.0.0",
     "kkt": "6.10.4",
     "lint-staged": "11.0.0",
