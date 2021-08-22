@@ -1,2 +1,0 @@
-(this["webpackJsonp@uiw/react-textarea-code-editor"]=this["webpackJsonp@uiw/react-textarea-code-editor"]||[]).push([[41],{505:function(e,t,n){"use strict";n.r(t),t.default="#!/usr/bin/perl\nuse strict;\nuse warnings;\n\nuse Path::Tiny;\n\nmy $dir = path('foo','bar'); # foo/bar\n\n# Iterate over the content of foo/bar\nmy $iter = $dir->iterator;\nwhile (my $file = $iter->()) {\n\n    # See if it is a directory and skip\n    next if $file->is_dir();\n\n    # Print out the file name and path\n    print \"$file\\n\";\n}"}}]);
-//# sourceMappingURL=41.5e60317d.chunk.js.map
