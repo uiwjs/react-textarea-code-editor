@@ -19,9 +19,9 @@
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "types": ["jest", "node"],
+    "types": ["node"],
     "forceConsistentCasingInFileNames": true,
     "noEmit": true
   },
-  "include": ["src", "website", ".kktrc.ts"]
+  "include": ["src", "website", ".kktrc.ts", "react-app-env.d.ts"]
 }
