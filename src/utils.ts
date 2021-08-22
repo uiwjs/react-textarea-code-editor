@@ -1,5 +1,4 @@
-// @ts-ignore
-import rehype from 'rehype';
+import { rehype } from 'rehype';
 // @ts-ignore
 import rehypePrism from '@mapbox/rehype-prism';
 
