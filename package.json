@@ -25,7 +25,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "files": [
-    "lib",
+    "esm",
     "cjs",
     "src"
   ],
