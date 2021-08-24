@@ -3,6 +3,7 @@
   "include": ["../src"],
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "../cjs",
     "emitDeclarationOnly": true,
     "noEmit": false
   }
