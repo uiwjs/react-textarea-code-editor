@@ -86,7 +86,7 @@
     "@uiw/react-markdown-preview": "3.2.2",
     "code-example": "3.0.6",
     "compile-less-cli": "1.8.1",
-    "husky": "7.0.1",
+    "husky": "7.0.2",
     "kkt": "6.11.0",
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
