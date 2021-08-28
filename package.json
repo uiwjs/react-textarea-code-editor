@@ -83,7 +83,7 @@
     "@types/react-test-renderer": "17.0.1",
     "@types/testing-library__jest-dom": "5.14.1",
     "@uiw/react-github-corners": "1.4.0",
-    "@uiw/react-markdown-preview": "3.2.2",
+    "@uiw/react-markdown-preview": "3.3.0",
     "code-example": "3.0.6",
     "compile-less-cli": "1.8.1",
     "husky": "7.0.2",
