@@ -12,6 +12,7 @@ A simple code editor with syntax highlighting. This library aims to provide a si
 - 🐲 Automatic indent on new lines.
 - 🩲 Indent line or selected text by pressing tab key, with customizable indentation.
 - 🌸 Wrap selected text in parens, <kbd>[]</kbd>, <kbd>()</kbd>, <kbd><></kbd>, <kbd>{}</kbd>, <kbd>""</kbd>, <kbd>''</kbd>, <kbd>""</kbd>, <kbd>``</kbd>
+- 💡 Support [next.js](https://github.com/uiwjs/react-md-editor/issues/52#issuecomment-848969341), [Use examples](#support-nextjs) in [next.js](https://nextjs.org/).
 
 ## Install
 
@@ -46,6 +47,61 @@ function App() {
     />
   );
 }
+```
+
+## Support Nextjs
+
+Use examples in nextjs. [#31](https://github.com/uiwjs/react-textarea-code-editor/issues/31#issuecomment-909363339)
+
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-textarea-code-editor-example-nextjs-gdzlw?fontsize=14&hidenavigation=1&theme=dark)
+
+```bash
+npm install next-remove-imports
+npm install @uiw/react-textarea-code-editor@v1.4.4
+```
+
+```js
+// next.config.js
+const removeImports = require("next-remove-imports")();
+module.exports = removeImports({
+  experimental: { esmExternals: true }
+});
+```
+
+```jsx
+import React from "react";
+import dynamic from "next/dynamic";
+import "@uiw/react-textarea-code-editor/dist.css";
+
+const CodeEditor = dynamic(
+  () => import("@uiw/react-textarea-code-editor").then((mod) => mod.default),
+  { ssr: false }
+);
+
+function HomePage() {
+  const [code, setCode] = React.useState(
+    `function add(a, b) {\n  return a + b;\n}`
+  );
+  return (
+    <div>
+      <CodeEditor
+        value={code}
+        language="js"
+        placeholder="Please enter JS code."
+        onChange={(evn) => setCode(evn.target.value)}
+        padding={15}
+        style={{
+          fontSize: 12,
+          backgroundColor: "#f5f5f5",
+          fontFamily:
+            "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace"
+        }}
+      />
+    </div>
+  );
+}
+
+export default HomePage;
 ```
 
 ## Props
