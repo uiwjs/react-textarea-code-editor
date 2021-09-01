@@ -6,8 +6,8 @@
     "runtime-main.js": "/react-textarea-code-editor/static/js/runtime-main.f3c9af10.js",
     "runtime-main.js.map": "/react-textarea-code-editor/static/js/runtime-main.f3c9af10.js.map",
     "static/css/2.d01cb069.chunk.css": "/react-textarea-code-editor/static/css/2.d01cb069.chunk.css",
-    "static/js/2.1eed071e.chunk.js": "/react-textarea-code-editor/static/js/2.1eed071e.chunk.js",
-    "static/js/2.1eed071e.chunk.js.map": "/react-textarea-code-editor/static/js/2.1eed071e.chunk.js.map",
+    "static/js/2.2c0fd071.chunk.js": "/react-textarea-code-editor/static/js/2.2c0fd071.chunk.js",
+    "static/js/2.2c0fd071.chunk.js.map": "/react-textarea-code-editor/static/js/2.2c0fd071.chunk.js.map",
     "static/js/3.8b0bc684.chunk.js": "/react-textarea-code-editor/static/js/3.8b0bc684.chunk.js",
     "static/js/3.8b0bc684.chunk.js.map": "/react-textarea-code-editor/static/js/3.8b0bc684.chunk.js.map",
     "static/js/4.1647958e.chunk.js": "/react-textarea-code-editor/static/js/4.1647958e.chunk.js",
@@ -157,12 +157,12 @@
     "index.html": "/react-textarea-code-editor/index.html",
     "static/css/2.d01cb069.chunk.css.map": "/react-textarea-code-editor/static/css/2.d01cb069.chunk.css.map",
     "static/css/main.2b6a4e0c.chunk.css.map": "/react-textarea-code-editor/static/css/main.2b6a4e0c.chunk.css.map",
-    "static/js/2.1eed071e.chunk.js.LICENSE.txt": "/react-textarea-code-editor/static/js/2.1eed071e.chunk.js.LICENSE.txt"
+    "static/js/2.2c0fd071.chunk.js.LICENSE.txt": "/react-textarea-code-editor/static/js/2.2c0fd071.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f3c9af10.js",
     "static/css/2.d01cb069.chunk.css",
-    "static/js/2.1eed071e.chunk.js",
+    "static/js/2.2c0fd071.chunk.js",
     "static/css/main.2b6a4e0c.chunk.css",
     "static/js/main.93fa4663.chunk.js"
   ]
