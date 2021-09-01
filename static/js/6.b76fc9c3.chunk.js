@@ -1,0 +1,2 @@
+(this["webpackJsonp@uiw/react-textarea-code-editor"]=this["webpackJsonp@uiw/react-textarea-code-editor"]||[]).push([[6],{410:function(e,r,t){"use strict";t.r(r),r.default="# Create a resource group.\naz group create --name myResourceGroup --location westeurope\n\n# Create a new virtual machine, this creates SSH keys if not present.\naz vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --generate-ssh-keys"}}]);
+//# sourceMappingURL=6.b76fc9c3.chunk.js.map

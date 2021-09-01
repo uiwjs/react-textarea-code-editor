@@ -1,2 +1,0 @@
-(this["webpackJsonp@uiw/react-textarea-code-editor"]=this["webpackJsonp@uiw/react-textarea-code-editor"]||[]).push([[49],{451:function(e,n,a){"use strict";a.r(n),n.default='import banana\r\n\r\n\r\nclass Monkey:\r\n    # Bananas the monkey can eat.\r\n    capacity = 10\r\n    def eat(self, n):\r\n        """Make the monkey eat n bananas!"""\r\n        self.capacity -= n * banana.size\r\n\r\n    def feeding_frenzy(self):\r\n        self.eat(9.25)\r\n        return "Yum yum"\r\n'}}]);
-//# sourceMappingURL=49.c665f530.chunk.js.map
