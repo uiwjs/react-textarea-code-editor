@@ -1,2 +1,0 @@
-(this["webpackJsonp@uiw/react-textarea-code-editor"]=this["webpackJsonp@uiw/react-textarea-code-editor"]||[]).push([[46],{445:function(e,n,E){"use strict";E.r(n),n.default="BEGIN\n    SELECT * INTO STRICT myrec FROM emp WHERE empname = myname;\n    EXCEPTION\n        WHEN NO_DATA_FOUND THEN\n            RAISE EXCEPTION 'employee % not found', myname;\n        WHEN TOO_MANY_ROWS THEN\n            RAISE EXCEPTION 'employee % not unique', myname;\nEND;"}}]);
-//# sourceMappingURL=46.a8378ed3.chunk.js.map
