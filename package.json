@@ -85,7 +85,7 @@
     "@types/testing-library__jest-dom": "5.14.1",
     "@uiw/react-github-corners": "1.5.3",
     "@uiw/react-markdown-preview": "3.3.2",
-    "code-example": "3.1.0",
+    "code-example": "3.3.1",
     "compile-less-cli": "1.8.8",
     "husky": "7.0.2",
     "kkt": "6.11.0",
