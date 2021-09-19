@@ -16,6 +16,7 @@ export const textarea: React.CSSProperties = {
   width: '100%',
   resize: 'none',
   color: 'inherit',
+  opacity: 0.8,
   overflow: 'hidden',
   MozOsxFontSmoothing: 'grayscale',
   WebkitFontSmoothing: 'antialiased',
