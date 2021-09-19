@@ -18,7 +18,7 @@ jobs:
     - run: npm run build
     - run: npm run test:coverage
     - run: coverage-badges
-    - run: npm run cp -rp coverage build
+    - run: cp -rp coverage build
     - run: npm run doc
 
     - run: npm install @jsdevtools/npm-publish -g
