@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-textarea-code-editor/static/css/main.2b6a4e0c.chunk.css",
-    "main.js": "/react-textarea-code-editor/static/js/main.1f2308aa.chunk.js",
-    "main.js.map": "/react-textarea-code-editor/static/js/main.1f2308aa.chunk.js.map",
+    "main.js": "/react-textarea-code-editor/static/js/main.f430428a.chunk.js",
+    "main.js.map": "/react-textarea-code-editor/static/js/main.f430428a.chunk.js.map",
     "runtime-main.js": "/react-textarea-code-editor/static/js/runtime-main.8e66811c.js",
     "runtime-main.js.map": "/react-textarea-code-editor/static/js/runtime-main.8e66811c.js.map",
     "static/css/2.d01cb069.chunk.css": "/react-textarea-code-editor/static/css/2.d01cb069.chunk.css",
@@ -180,6 +180,6 @@
     "static/css/2.d01cb069.chunk.css",
     "static/js/2.65bd6d6c.chunk.js",
     "static/css/main.2b6a4e0c.chunk.css",
-    "static/js/main.1f2308aa.chunk.js"
+    "static/js/main.f430428a.chunk.js"
   ]
 }
