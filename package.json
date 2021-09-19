@@ -54,6 +54,10 @@
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/?!(.*)"
     ],
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ],
     "collectCoverageFrom": [
       "**/*.{tsx,ts}",
       "!.kktrc.ts",
