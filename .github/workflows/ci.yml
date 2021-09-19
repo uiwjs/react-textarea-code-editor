@@ -18,8 +18,8 @@ jobs:
     - run: npm run build
     - run: npm run test:coverage
     - run: coverage-badges
-    - run: cp -rp coverage build
     - run: npm run doc
+    - run: cp -rp coverage build
 
     - run: npm install @jsdevtools/npm-publish -g
     - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
