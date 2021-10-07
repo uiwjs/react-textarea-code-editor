@@ -90,7 +90,7 @@
     "@uiw/react-github-corners": "1.5.3",
     "@uiw/react-markdown-preview": "3.3.5",
     "code-example": "3.3.1",
-    "compile-less-cli": "1.8.8",
+    "compile-less-cli": "1.8.9",
     "husky": "7.0.2",
     "kkt": "6.11.0",
     "lint-staged": "11.1.2",
