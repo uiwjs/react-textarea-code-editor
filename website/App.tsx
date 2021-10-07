@@ -2,38 +2,54 @@ import React, { useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import GitHubCorners from '@uiw/react-github-corners';
 import rehypeAttr from 'rehype-attr';
-// @ts-ignore
+import Loader from '@uiw/react-loader';
 import exts from 'code-example/ext.json';
 import TextareaCodeEditor from '../';
 import MDStr from '../README.md';
 import './App.css';
 
-const App: React.FC = () => {
-  const [value, setValue] = useState('');
-  const [language, setLanguage] = useState('jsx');
-  const [lang, setLang] = useState('jsx');
+const useFetch = (language: string) => {
+  const [code, setCode] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [lang, setLang] = useState(language);
+  const [error, setError] = useState<any>(null);
+
   useEffect(() => {
-    if (language) {
-      import(`code-example/txt/sample.${language}.txt`)
-        .then((code) => {
-          setValue(code.default || '');
-          let str = language;
-          if (/^(mysql|pgsql)$/.test(language)) {
-            str = 'sql';
-          }
-          if (/^(objective-c)$/.test(language)) {
-            str = 'objc';
-          }
-          if (/^(vue)$/.test(language)) {
-            str = 'html';
-          }
-          setLang(str);
-        })
-        .catch((err) => {
-          setValue('');
-        });
-    }
+    setLoading(true);
+    const fetchData = async () => {
+      try {
+        const codeStr = await import(`code-example/txt/sample.${language}.txt`);
+        setCode(codeStr.default);
+
+        let str = language;
+        if (/^(mysql|pgsql)$/.test(language)) {
+          str = 'sql';
+        }
+        if (/^(objective-c)$/.test(language)) {
+          str = 'objc';
+        }
+        if (/^(vue)$/.test(language)) {
+          str = 'html';
+        }
+        setLang(str);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+        setError(error);
+        setCode('');
+      }
+    };
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
+
+  return { lang, loading, code, setCode, error };
+};
+
+const App: React.FC = () => {
+  const [language, setLanguage] = useState('jsx');
+  const { lang, loading, code, setCode } = useFetch(language);
   // @ts-ignore
   const version = VERSION;
   return (
@@ -46,7 +62,7 @@ const App: React.FC = () => {
       <div className="App-editor">
         <TextareaCodeEditor
           autoFocus
-          value={value}
+          value={code}
           language={lang}
           minHeight={80}
           placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`}
@@ -55,7 +71,7 @@ const App: React.FC = () => {
             fontSize: 14,
             fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
           }}
-          onChange={(evn) => setValue(evn.target.value)}
+          onChange={(evn) => setCode(evn.target.value)}
         />
       </div>
       <div className="App-tools" style={{ marginTop: 5 }}>
@@ -69,6 +85,7 @@ const App: React.FC = () => {
             );
           })}
         </select>
+        <Loader loading={loading} />
       </div>
       <MarkdownPreview source={MDStr} className="info" rehypePlugins={[[rehypeAttr, { properties: 'attr' }]]} />
     </div>
