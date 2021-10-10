@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import GitHubCorners from '@uiw/react-github-corners';
-import rehypeAttr from 'rehype-attr';
 import Loader from '@uiw/react-loader';
 import exts from 'code-example/ext.json';
 import TextareaCodeEditor from '../';
@@ -87,7 +86,7 @@ const App: React.FC = () => {
         </select>
         <Loader loading={loading} />
       </div>
-      <MarkdownPreview source={MDStr} className="info" rehypePlugins={[[rehypeAttr, { properties: 'attr' }]]} />
+      <MarkdownPreview source={MDStr} className="info" />
     </div>
   );
 };

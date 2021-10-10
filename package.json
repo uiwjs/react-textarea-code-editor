@@ -88,7 +88,7 @@
     "@types/react-test-renderer": "17.0.1",
     "@types/testing-library__jest-dom": "5.14.1",
     "@uiw/react-github-corners": "1.5.3",
-    "@uiw/react-markdown-preview": "3.3.5",
+    "@uiw/react-markdown-preview": "3.4.0",
     "@uiw/react-loader": "4.9.7",
     "code-example": "3.3.1",
     "compile-less-cli": "1.8.9",
@@ -99,7 +99,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-test-renderer": "17.0.2",
-    "rehype-attr": "2.0.6",
     "tsbb": "3.4.1"
   },
   "eslintConfig": {
