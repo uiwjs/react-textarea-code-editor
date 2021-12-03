@@ -1,0 +1,2 @@
+(this["webpackJsonp@uiw/react-textarea-code-editor"]=this["webpackJsonp@uiw/react-textarea-code-editor"]||[]).push([[27],{454:function(e,r,n){"use strict";n.r(r),r.default='# Example of a .gitconfig file\r\n\r\n[core]\r\n  repositoryformatversion = 0\r\n  filemode = false\r\n  bare = false\r\n  logallrefupdates = true\r\n  symlinks = false\r\n  ignorecase = true\r\n  hideDotFiles = dotGitOnly\r\n\r\n# Defines the master branch\r\n[branch "master"]\r\n  remote = origin\r\n  merge = refs/heads/master\r\n'}}]);
+//# sourceMappingURL=27.60342ed1.chunk.js.map
