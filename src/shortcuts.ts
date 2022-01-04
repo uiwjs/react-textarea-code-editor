@@ -1,3 +1,4 @@
+import React from 'react';
 import { stopPropagation } from './utils';
 import { SelectionText } from './SelectionText';
 
