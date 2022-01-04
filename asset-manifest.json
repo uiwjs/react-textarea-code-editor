@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/react-textarea-code-editor/static/css/main.e11c38df.css",
-    "main.js": "/react-textarea-code-editor/static/js/main.044bf0fd.js",
+    "main.js": "/react-textarea-code-editor/static/js/main.3a840b6f.js",
     "code-example-vendor.js": "/react-textarea-code-editor/static/js/code-example-vendor.0628c30d.chunk.js",
-    "refractor-vendor.js": "/react-textarea-code-editor/static/js/refractor-vendor.db77bbf8.js",
+    "refractor-vendor.js": "/react-textarea-code-editor/static/js/refractor-vendor.a44d9746.js",
     "react-vendor.js": "/react-textarea-code-editor/static/js/react-vendor.0e51bb08.js",
     "index.html": "/react-textarea-code-editor/index.html",
     "main.e11c38df.css.map": "/react-textarea-code-editor/static/css/main.e11c38df.css.map",
-    "main.044bf0fd.js.map": "/react-textarea-code-editor/static/js/main.044bf0fd.js.map",
+    "main.3a840b6f.js.map": "/react-textarea-code-editor/static/js/main.3a840b6f.js.map",
     "code-example-vendor.0628c30d.chunk.js.map": "/react-textarea-code-editor/static/js/code-example-vendor.0628c30d.chunk.js.map",
-    "refractor-vendor.db77bbf8.js.map": "/react-textarea-code-editor/static/js/refractor-vendor.db77bbf8.js.map",
+    "refractor-vendor.a44d9746.js.map": "/react-textarea-code-editor/static/js/refractor-vendor.a44d9746.js.map",
     "react-vendor.0e51bb08.js.map": "/react-textarea-code-editor/static/js/react-vendor.0e51bb08.js.map"
   },
   "entrypoints": [
-    "static/js/refractor-vendor.db77bbf8.js",
+    "static/js/refractor-vendor.a44d9746.js",
     "static/js/react-vendor.0e51bb08.js",
     "static/css/main.e11c38df.css",
-    "static/js/main.044bf0fd.js"
+    "static/js/main.3a840b6f.js"
   ]
 }
