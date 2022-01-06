@@ -57,15 +57,6 @@
     "coverageReporters": [
       "lcov",
       "json-summary"
-    ],
-    "collectCoverageFrom": [
-      "**/*.{tsx,ts}",
-      "!.kktrc.ts",
-      "!**/*.{js,d.ts}",
-      "!**/node_modules/**",
-      "!<rootDir>/coverage/**",
-      "!**/website/**",
-      "!**/vendor/**"
     ]
   },
   "peerDependencies": {
