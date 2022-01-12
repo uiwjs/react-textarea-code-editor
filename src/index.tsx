@@ -1,4 +1,5 @@
 import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import refractor from 'refractor';
 import { processHtml, htmlEncode } from './utils';
 import shortcuts from './shortcuts';
 import * as styles from './styles';
@@ -20,6 +21,10 @@ export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HT
    * The minimum height of the editor. Default: `16`.
    */
   minHeight?: number;
+  /**
+   * A refractor syntax (Prism language definition) to be registered by refractor. Default: `undefined`.
+   */
+  syntax?: refractor.RefractorSyntax;
 }
 
 export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((props, ref) => {
@@ -28,6 +33,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     value: _,
     padding = 10,
     minHeight = 16,
+    syntax = undefined,
     placeholder,
     language,
     className,
@@ -54,6 +60,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
         `<pre aria-hidden=true><code ${language ? `class="language-${language}"` : ''} >${htmlEncode(
           String(value || ''),
         )}</code><br /></pre>`,
+        syntax,
       ),
     [value, language],
   );

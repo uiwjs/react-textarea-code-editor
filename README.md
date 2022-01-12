@@ -106,6 +106,9 @@ export default HomePage;
 
 ## Props
 
+See [`refractor.register(syntax)`](https://github.com/wooorm/refractor#refractorregistersyntax) to understand
+what to pass to `syntax` prop.
+
 ```ts
 interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   prefixCls?: string;
@@ -121,6 +124,10 @@ interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextA
    * The minimum height of the editor. Default: `16`.
    */
   minHeight?: number;
+  /**
+   * A refractor syntax (Prism language definition) to be registered by refractor. Default: `undefined`.
+   */
+  syntax?: refractor.RefractorSyntax;
 }
 ```
 
