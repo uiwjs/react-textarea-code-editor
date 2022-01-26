@@ -81,8 +81,9 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
         {...other}
         placeholder={placeholder}
         onKeyDown={(evn) => {
-          shortcuts(evn);
-          other.onKeyDown && other.onKeyDown(evn);
+          if (!other.onKeyDown || other.onKeyDown(evn)!==false) {
+            shortcuts(evn);
+          }
         }}
         style={{
           ...styles.editor,
