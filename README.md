@@ -123,7 +123,8 @@ interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextA
   minHeight?: number;
 }
 ```
-
+List of supported languages can be found [here](https://github.com/wooorm/refractor#syntaxes)
+      
 ## Demo
 
 https://uiwjs.github.io/react-textarea-code-editor/
