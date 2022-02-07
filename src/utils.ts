@@ -1,11 +1,12 @@
 import { rehype } from 'rehype';
 // @ts-ignore
 import rehypePrism from '@mapbox/rehype-prism';
+import refractor from 'refractor';
 
-export const processHtml = (html: string) => {
+export const processHtml = (html: string, syntax: refractor.RefractorSyntax | undefined) => {
   return rehype()
     .data('settings', { fragment: true })
-    .use(rehypePrism, { ignoreMissing: true })
+    .use(rehypePrism, { ignoreMissing: true, syntax: syntax })
     .processSync(`${html}`)
     .toString();
 };
