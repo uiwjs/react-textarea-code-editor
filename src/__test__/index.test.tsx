@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-conditional-expect */
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import TestRenderer from 'react-test-renderer';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import TextareaCodeEditor from '../';
@@ -20,26 +20,73 @@ it('Should output a TextareaCodeEditor', async () => {
       padding: 0,
       overflow: 'hidden',
     });
-    expect(tree.children!.length).toEqual(2);
-    tree.children!.forEach((child) => {
-      if (typeof child === 'object') {
-        expect(/^(div|textarea)$/.test(child.type || '')).toBeTruthy();
-        if (child.type === 'textarea') {
-          expect(child.props.placeholder).toEqual('Please enter JS code.');
-          expect(child.props.autoComplete).toEqual('off');
-          expect(child.props.autoCorrect).toEqual('off');
-          expect(child.props.spellCheck).toEqual('false');
-          expect(child.props.autoCapitalize).toEqual('off');
-          expect(child.props.className).toEqual('w-tc-editor-text');
-        }
-      }
-    });
   }
+  render(
+    <TextareaCodeEditor
+      language="html"
+      data-testid="textbox"
+      autoFocus
+      value="function add(a, b) {\n  return a + b;\n}"
+    />,
+  );
+  const textbox = screen.getByTestId('textbox');
+  expect(textbox).toHaveStyle({
+    margin: '0px',
+    border: '0px',
+    background: 'none',
+    'box-sizing': 'inherit',
+    display: 'inherit',
+    'font-family': 'inherit',
+    // 'font-size': 'inherit',
+    'font-style': 'inherit',
+    'font-variant-ligatures': 'inherit',
+    'font-weight': 'inherit',
+    'letter-spacing': 'inherit',
+    'line-height': 'inherit',
+    'tab-size': 'inherit',
+    'text-indent': 'inherit',
+    'text-rendering': 'inherit',
+    'text-transform': 'inherit',
+    'white-space': 'pre-wrap',
+    'word-break': 'keep-all',
+    'overflow-wrap': 'break-word',
+    outline: 0,
+    position: 'absolute',
+    top: '0px',
+    left: '0px',
+    height: '100%',
+    width: '100%',
+    resize: 'none',
+    // color: 'inherit',
+    opacity: 0.8,
+    overflow: 'hidden',
+    // '-webkit-font-smoothing': 'antialiased',
+    // '-webkit-text-fill-color': 'transparent',
+    padding: '10px 10px 10px 10px',
+    // 'minHeight:': '16px',
+    // 'min-height:': '80px',
+  });
 });
 
 it('TextareaCodeEditor language="html"', async () => {
+  render(
+    <TextareaCodeEditor
+      language="html"
+      autoFocus
+      data-testid="textarea"
+      value="function add(a, b) {\n  return a + b;\n}"
+    />,
+  );
+  const textbox = screen.getByRole('textbox');
+  expect(textbox.getAttribute('style')).toEqual(
+    'margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; resize: none; opacity: 0.8; overflow: hidden; padding: 10px 10px 10px 10px; min-height: 16px;',
+  );
+  // eslint-disable-next-line testing-library/no-node-access
+  expect(textbox.nextElementSibling?.getAttribute('style')).toEqual(
+    'margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0; padding: 10px 10px 10px 10px; min-height: 16px;',
+  );
   const component = TestRenderer.create(
-    <TextareaCodeEditor language="html" onChange={() => {}} value="<div>Hello World!</div>" />,
+    <TextareaCodeEditor language="html" data-testid="textarea" onChange={() => {}} value="<div>Hello World!</div>" />,
   );
   let tree = component.toJSON();
   if (tree && !Array.isArray(tree)) {
@@ -53,57 +100,16 @@ it('TextareaCodeEditor language="html"', async () => {
       padding: 0,
       overflow: 'hidden',
     });
-    expect(tree.children!.length).toEqual(2);
-    tree.children!.forEach((child) => {
-      if (typeof child === 'object') {
-        expect(/^(div|textarea)$/.test(child.type || '')).toBeTruthy();
-        if (child.type === 'textarea') {
-          expect(child.props.autoComplete).toEqual('off');
-          expect(child.props.autoCorrect).toEqual('off');
-          expect(child.props.spellCheck).toEqual('false');
-          expect(child.props.autoCapitalize).toEqual('off');
-          expect(child.props.className).toEqual('w-tc-editor-text');
-        }
-        if (child.type === 'div') {
-          expect(child.props.style).toEqual({
-            background: 'none',
-            border: 0,
-            boxSizing: 'inherit',
-            display: 'inherit',
-            fontFamily: 'inherit',
-            fontSize: 'inherit',
-            fontStyle: 'inherit',
-            fontVariantLigatures: 'inherit',
-            fontWeight: 'inherit',
-            letterSpacing: 'inherit',
-            lineHeight: 'inherit',
-            margin: 0,
-            minHeight: 16,
-            outline: 0,
-            overflowWrap: 'break-word',
-            paddingTop: 10,
-            paddingRight: 10,
-            paddingBottom: 10,
-            paddingLeft: 10,
-            tabSize: 'inherit',
-            textIndent: 'inherit',
-            textRendering: 'inherit',
-            textTransform: 'inherit',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'keep-all',
-          });
-          expect(child.props.className).toEqual('w-tc-editor-preview language-html');
-          expect(typeof child.props.dangerouslySetInnerHTML).toEqual('object');
-        }
-      }
-    });
   }
 });
 
-it('TextareaCodeEditor onChange', async () => {
+it('TextareaCodeEditor onChange 1', async () => {
   const MyComponent = () => {
     const txtRef = useRef<HTMLTextAreaElement>(null);
     const [code] = React.useState(`function add(a, b) {\n  return a + b;\n}`);
+    useEffect(() => {
+      expect(txtRef.current?.getAttribute('autoCorrect')).toEqual('off');
+    });
     return (
       <TextareaCodeEditor
         language="js"
@@ -115,372 +121,286 @@ it('TextareaCodeEditor onChange', async () => {
       />
     );
   };
+  render(<MyComponent />);
+});
 
-  const {
-    container: { firstChild },
-  } = render(<MyComponent />);
-  if (firstChild && firstChild.firstChild) {
-    fireEvent.input(firstChild.firstChild, { target: { value: 'a' } });
-  }
+it('TextareaCodeEditor onChange', async () => {
+  const onChange = jest.fn<undefined, [React.ChangeEvent]>();
+  render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      onChange={onChange}
+      autoFocus
+      value="function add(a, b) {\n  return a + b;\n}"
+    />,
+  );
+  const textarea = screen.getAllByTestId('textarea');
+  textarea[0].focus();
+  fireEvent.input(textarea[0], { target: { value: 'a' } });
+  expect(textarea[0]).toHaveValue(`a`);
 });
 
 it('TextareaCodeEditor Tab Input', async () => {
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor language="js" data-testid="textarea" autoFocus value="console.log('This is a bad example')" />,
+  const onKeyDown = jest.fn<boolean, [React.KeyboardEvent]>();
+  render(
+    <TextareaCodeEditor
+      language="js"
+      data-testid="textarea"
+      onKeyDown={onKeyDown}
+      autoFocus
+      value="console.log('This is a bad example')"
+    />,
   );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(23, 26);
-    userEvent.type(firstChild.firstChild as any, '{backspace}good');
-
-    expect(firstChild.firstChild).toHaveFocus();
-    expect(firstChild.firstChild).toHaveValue(`console.log('This is a good example')`);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: 'Tab',
-      code: 'Tab',
-      charCode: 9,
-    });
-  }
+  const textarea = screen.getAllByTestId<HTMLTextAreaElement>('textarea');
+  textarea[0].setSelectionRange(23, 26);
+  userEvent.type(textarea[0], '{backspace}good');
+  expect(textarea[0]).toHaveValue(`console.log('This is a good example')`);
 });
 
 it('TextareaCodeEditor onKeyDown Tab Input', async () => {
-  const {
-    container: { firstChild },
-  } = render(
+  const onKeyDown = jest.fn<boolean, [React.KeyboardEvent]>();
+  render(
     <TextareaCodeEditor
       language="js"
       data-testid="textarea"
       autoFocus
-      value="console.log('This is a bad example')"
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('tab');
-        expect((evn.target as any).value).toEqual(`console.log('This is a    example')`);
-      }}
+      placeholder="Please enter JS code."
+      value=""
+      onKeyDown={onKeyDown}
     />,
   );
+  const textarea = screen.getByPlaceholderText('Please enter JS code.');
+  // console.log(textarea.value);
+  // const signinModal = document.getElementsByTagName('textarea');
+  // console.log('firstChild', textarea)
+  fireEvent.input(textarea, { target: { value: 'This is a bad example' } });
+  expect(textarea).toHaveFocus();
+  expect(textarea).toHaveValue('This is a bad example');
 
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(23, 26);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: 'Tab',
-      code: 'Tab',
-      charCode: 9,
-    });
-  }
+  const elmTextarea = screen.getByDisplayValue('This is a bad example');
+  (elmTextarea as HTMLTextAreaElement).setSelectionRange(1, 1);
+  elmTextarea.focus();
+  await userEvent.keyboard('a');
+  expect(onKeyDown).toHaveBeenCalledTimes(1);
+  expect(onKeyDown.mock.calls[0][0]).toHaveProperty('keyCode', 97);
+
+  await userEvent.keyboard('[Enter]');
+  expect(onKeyDown).toHaveBeenCalledTimes(2);
+  expect(onKeyDown.mock.calls[1][0]).toHaveProperty('keyCode', 13);
+  elmTextarea.focus();
+  expect(elmTextarea).toHaveValue('Ta\nhis is a bad example');
+
+  elmTextarea.focus();
+  await (elmTextarea as HTMLTextAreaElement).setSelectionRange(1, 1);
+  fireEvent.keyDown(elmTextarea, {
+    key: 'Tab',
+    code: 'Tab',
+    charCode: 9,
+  });
+  // ⚠️ ============================================================
+  // await userEvent.keyboard('{Tab}{f}{o}{o}');
+  expect(elmTextarea).toHaveValue('T  a\nhis is a bad example');
 });
 
-it('TextareaCodeEditor onKeyDown Tab One-Line Input', async () => {
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={`console.log('This is a bad example')\nconsole.log('This is a good example')`}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('tab');
-        expect((evn.target as any).value).toEqual(
-          `  console.log('This is a bad example')\n  console.log('This is a good example')`,
-        );
-      }}
-    />,
-  );
+it('TextareaCodeEditor Tab2', async () => {
+  const example = `function add(a, b)`;
+  const expected = `function  add(a, b)`;
+  render(<TextareaCodeEditor language="js" data-testid="textbox" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textbox');
+  expect(textbox).toHaveFocus();
+  textbox.setSelectionRange(8, 9);
+  fireEvent.keyDown(textbox, {
+    key: 'Tab',
+    code: 'Tab',
+    charCode: 9,
+  });
+  expect(textbox).toHaveValue(expected);
+});
 
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 60);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: 'Tab',
-      code: 'Tab',
-      charCode: 9,
-    });
-  }
+it('TextareaCodeEditor Tab', async () => {
+  const example = `function add(a, b) {\n  return a + b;\n}`;
+  const expected = `  function add(a, b) {\n    return a + b;\n}`;
+  render(<TextareaCodeEditor language="js" data-testid="textbox" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textbox');
+  expect(textbox).toHaveFocus();
+  textbox.setSelectionRange(5, 26);
+  fireEvent.keyDown(textbox, {
+    key: 'Tab',
+    code: 'Tab',
+    charCode: 9,
+  });
+  expect(textbox).toHaveValue(expected);
+});
+
+it('TextareaCodeEditor onKeyDown Tab One-Line input', async () => {
+  const example = `console.log('This is a bad example')\nconsole.log('This is a good example')`;
+  const expected = `console.log('This is a bad example')\n  console.log('This is a good example')`;
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(37, 37);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: 'Tab',
+    code: 'Tab',
+    charCode: 9,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Tab Multi-Line Input', async () => {
   const example = `\nfunction stopPropagation(e) {\n  e.stopPropagation();\n  e.preventDefault();\n}`;
   const expected = `\nfunction stopPropagation(e) {\ne.stopPropagation();\ne.preventDefault();\n}`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('tab');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(38, 67);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: 'Tab',
-      code: 'Tab',
-      charCode: 9,
-      shiftKey: true,
-    });
-  }
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(38, 67);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: 'Tab',
+    code: 'Tab',
+    charCode: 9,
+    shiftKey: true,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Tab Multi-Line 2 Input', async () => {
   const example = `\nfunction stopPropagation(e) {\n  e.stopPropagation();\n  e.preventDefault();\n}`;
   const expected = `\nfunction stopPropagation(e) {\ne.stopPropagation();\ne.preventDefault();\n}`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('tab');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(6, 67);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: 'Tab',
-      code: 'Tab',
-      charCode: 9,
-      shiftKey: true,
-    });
-  }
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(6, 67);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: 'Tab',
+    code: 'Tab',
+    charCode: 9,
+    shiftKey: true,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Enter Input', async () => {
   const example = `\nfunction stopPropagation(e) {\n  e.stopPropagation();\n  e.preventDefault();\n}`;
   const expected = `\nfunction stopPropagation(e) {\n \n  e.stopPropagation();\n  e.preventDefault();\n}`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('enter');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(32, 32);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: 'Enter',
-      code: 'Enter',
-      charCode: 13,
-    });
-  }
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(32, 32);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: 'Enter',
+    code: 'Enter',
+    charCode: 13,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Input `()`', async () => {
   const example = `/** Hello Wold **/`;
   const expected = `/** (Hello) Wold **/`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('digit9');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 9);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: '(',
-      code: 'Digit9',
-      charCode: 57,
-      shiftKey: true,
-    });
-  }
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(4, 9);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: '(',
+    code: 'Digit9',
+    charCode: 57,
+    shiftKey: true,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Input `<>`', async () => {
-  const example = `/** Hello Wold **/`;
-  const expected = `/** <Hello> Wold **/`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('comma');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 9);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: '<',
-      code: 'Comma',
-      charCode: 188,
-      shiftKey: true,
-    });
-  }
+  const example = `/** Hello World **/`;
+  const expected = `/** <Hello> World **/`;
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(4, 9);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: '[',
+    code: 'Comma',
+    charCode: 188,
+    shiftKey: true,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Input `[]`', async () => {
-  const example = `/** Hello Wold **/`;
-  const expected = `/** [Hello] Wold **/`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('bracketleft');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 9);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: '[',
-      code: 'BracketLeft',
-      charCode: 219,
-    });
-  }
+  const example = `/** Hello World **/`;
+  const expected = `/** [Hello] World **/`;
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(4, 9);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: '[',
+    code: 'BracketLeft',
+    charCode: 219,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Input `{}`', async () => {
-  const example = `/** Hello Wold **/`;
-  const expected = `/** {Hello} Wold **/`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('bracketleft');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 9);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: '{',
-      code: 'BracketLeft',
-      charCode: 219,
-      shiftKey: true,
-    });
-  }
+  const example = `/** Hello World **/`;
+  const expected = `/** {Hello} World **/`;
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(4, 9);
+  textbox.focus();
+  // userEvent.keyboard(`{Shift>}'{/Shift}`)
+  fireEvent.keyDown(textbox, {
+    key: '{',
+    code: 'BracketLeft',
+    charCode: 219,
+    shiftKey: true,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
-it("TextareaCodeEditor onKeyDown Input `''`", async () => {
-  const example = `/** Hello Wold **/`;
-  const expected = `/** 'Hello' Wold **/`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('quote');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 9);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: "'",
-      code: 'Quote',
-      charCode: 222,
-    });
-  }
+it("TextareaCodeEditor onKeyDown Input ~ `''`", async () => {
+  const example = `/** Hello World **/`;
+  const expected = `/** 'Hello' World **/`;
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(4, 9);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: '"',
+    code: 'Quote',
+    charCode: 222,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Input `""`', async () => {
-  const example = `/** Hello Wold **/`;
-  const expected = `/** "Hello" Wold **/`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('quote');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 9);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: '"',
-      code: 'Quote',
-      charCode: 222,
-      shiftKey: true,
-    });
-  }
+  const example = `/** Hello World **/`;
+  const expected = `/** "Hello" World **/`;
+  render(<TextareaCodeEditor language="js" data-testid="textarea" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textarea');
+  textbox.setSelectionRange(4, 9);
+  textbox.focus();
+  fireEvent.keyDown(textbox, {
+    key: '"',
+    code: 'Quote',
+    charCode: 222,
+    shiftKey: true,
+  });
+  expect(textbox).toHaveValue(expected);
 });
 
 it('TextareaCodeEditor onKeyDown Input ``', async () => {
-  const example = `/** Hello Wold **/`;
-  const expected = `/** \`Hello\` Wold **/`;
-  const {
-    container: { firstChild },
-  } = render(
-    <TextareaCodeEditor
-      language="js"
-      data-testid="textarea"
-      autoFocus
-      value={example}
-      onKeyDown={(evn) => {
-        expect(evn.code.toLowerCase()).toEqual('backquote');
-        expect((evn.target as any).value).toEqual(expected);
-      }}
-    />,
-  );
-
-  if (firstChild && firstChild.firstChild) {
-    (firstChild.firstChild as any).setSelectionRange(4, 9);
-    fireEvent.keyDown(firstChild.firstChild, {
-      key: '`',
-      code: 'Backquote',
-      charCode: 192,
-    });
-  }
+  const example = `/** Hello World **/`;
+  const expected = `/** \`Hello\` World **/`;
+  render(<TextareaCodeEditor language="js" data-testid="textbox" autoFocus value={example} />);
+  const textbox = screen.getByTestId<HTMLTextAreaElement>('textbox');
+  textbox.setSelectionRange(4, 9);
+  textbox.focus();
+  fireEvent.keyDown(textbox || document.body, {
+    key: '`',
+    code: 'Backquote',
+    charCode: 192,
+  });
+  expect(textbox).toHaveValue(expected);
 });

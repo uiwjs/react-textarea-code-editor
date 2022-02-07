@@ -20,6 +20,7 @@ export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HT
    * The minimum height of the editor. Default: `16`.
    */
   minHeight?: number;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void | boolean;
 }
 
 export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((props, ref) => {
@@ -81,7 +82,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
         {...other}
         placeholder={placeholder}
         onKeyDown={(evn) => {
-          if (!other.onKeyDown || other.onKeyDown(evn)!==false) {
+          if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
             shortcuts(evn);
           }
         }}
