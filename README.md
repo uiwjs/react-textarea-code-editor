@@ -160,6 +160,12 @@ Your app is ready to be deployed!
 - [@uiw/react-markdown-editor](https://github.com/uiwjs/react-markdown-editor): A markdown editor with preview, implemented with React.js and TypeScript.
 - [@uiw/react-markdown-preview](https://github.com/uiwjs/react-markdown-preview): React component preview markdown text in web browser. 
 
+## Contributors
+
+<a href="https://github.com/uiwjs/react-textarea-code-editor/graphs/contributors">
+  <img src="https://uiwjs.github.io/react-textarea-code-editor/CONTRIBUTORS.svg" />
+</a>
+
 ## License
 
 Licensed under the MIT License.
