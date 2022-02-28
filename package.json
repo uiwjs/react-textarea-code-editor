@@ -14,6 +14,8 @@
     "css:build": "compile-less -d src -o esm",
     "css:watch": "compile-less -d src -o esm --watch",
     "css:build:dist": "compile-less -d src --combine dist.css --rm-global",
+    "bundle": "ncc build src/index.tsx --target web --filename heat-map",
+    "bundle:min": "ncc build src/index.tsx --target web --filename heat-map --minify",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,css,md,json}\"",
     "test": "kkt test --env=jsdom --app-src=./website",
     "test:coverage": "kkt test --env=jsdom --coverage --app-src=./website --bail"
@@ -65,30 +67,31 @@
     "react-dom": ">=16.9.0"
   },
   "dependencies": {
-    "@babel/runtime": "7.16.7",
-    "@mapbox/rehype-prism": "0.8.0",
-    "rehype": "12.0.0"
+    "@babel/runtime": "~7.17.2",
+    "@mapbox/rehype-prism": "~0.8.0",
+    "rehype": "~12.0.1"
   },
   "devDependencies": {
-    "@kkt/less-modules": "7.0.7",
-    "@kkt/raw-modules": "7.0.7",
-    "@kkt/scope-plugin-options": "7.0.7",
-    "@types/react": "17.0.39",
-    "@types/react-dom": "17.0.11",
-    "@types/react-test-renderer": "17.0.1",
-    "@uiw/react-github-corners": "1.5.3",
-    "@uiw/react-markdown-preview": "3.4.7",
-    "@uiw/react-loader": "4.10.3",
-    "code-example": "3.3.1",
-    "compile-less-cli": "1.8.11",
-    "husky": "7.0.4",
-    "kkt": "7.0.7",
-    "lint-staged": "12.3.3",
-    "prettier": "2.5.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-test-renderer": "17.0.2",
-    "tsbb": "3.5.5"
+    "@kkt/less-modules": "~7.1.1",
+    "@kkt/ncc": "~1.0.8",
+    "@kkt/raw-modules": "~7.1.1",
+    "@kkt/scope-plugin-options": "~7.1.1",
+    "@types/react": "~17.0.39",
+    "@types/react-dom": "~17.0.11",
+    "@types/react-test-renderer": "~17.0.1",
+    "@uiw/react-github-corners": "~1.5.3",
+    "@uiw/react-markdown-preview": "~3.4.7",
+    "@uiw/react-loader": "~4.12.2",
+    "code-example": "~3.3.1",
+    "compile-less-cli": "~1.8.11",
+    "husky": "~7.0.4",
+    "kkt": "~7.1.5",
+    "lint-staged": "~12.3.4",
+    "prettier": "~2.5.1",
+    "react": "~17.0.2",
+    "react-dom": "~17.0.2",
+    "react-test-renderer": "~17.0.2",
+    "tsbb": "~3.7.0"
   },
   "eslintConfig": {
     "extends": [

@@ -13,7 +13,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
-    "baseUrl": "./website",
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
@@ -23,5 +22,5 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true
   },
-  "include": ["src", "website", ".kktrc.ts", "react-app-env.d.ts"]
+  "include": ["src", "website", ".kktrc.ts"]
 }
