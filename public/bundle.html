@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/@babel/standalone@7.17.x/babel.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react@17.x/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17.x/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@uiw/codepen-require-polyfill/index.js" crossorigin></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@uiw/react-textarea-code-editor/dist/editor.css">
+  </head>
+  <body>
+    <a href="https://uiwjs.github.io/react-textarea-code-editor">@uiw/react-textarea-code-editor</a>
+    <div id="container" style="padding: 24px"></div>
+    <script src="https://unpkg.com/@uiw/react-textarea-code-editor/dist/editor.min.js"></script>
+    <script type="text/babel">
+      import CodeEditor from '@uiw/react-textarea-code-editor';
+      const Demo = () => {
+        const [code, setCode] = React.useState(
+          `function add(a, b) {\n  return a + b;\n}`
+        );
+        return (
+          <React.Fragment>
+            <CodeEditor
+              value={code}
+              language="js"
+              placeholder="Please enter JS code."
+              // onChange={(evn) => setCode(evn.target.value)}
+              padding={15}
+              style={{
+                fontSize: 12,
+                backgroundColor: "#f5f5f5",
+                fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+              }}
+            />
+          </React.Fragment>
+        );
+      }
+      ReactDOM.render(<Demo />, document.getElementById('container'));
+    </script>
+  </body>
+</html>
