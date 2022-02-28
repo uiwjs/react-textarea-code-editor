@@ -14,8 +14,8 @@
     "css:build": "compile-less -d src -o esm",
     "css:watch": "compile-less -d src -o esm --watch",
     "css:build:dist": "compile-less -d src --combine dist.css --rm-global",
-    "bundle": "ncc build src/index.tsx --target web --filename heat-map",
-    "bundle:min": "ncc build src/index.tsx --target web --filename heat-map --minify",
+    "bundle": "ncc build src/index.tsx --target web --filename editor",
+    "bundle:min": "ncc build src/index.tsx --target web --filename editor --minify",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,css,md,json}\"",
     "test": "kkt test --env=jsdom --app-src=./website",
     "test:coverage": "kkt test --env=jsdom --coverage --app-src=./website --bail"

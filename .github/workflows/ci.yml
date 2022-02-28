@@ -19,7 +19,27 @@ jobs:
     - run: npm run test:coverage
     - run: coverage-badges
     - run: npm run doc
+    - run: npm run bundle
+    - run: npm run bundle:min
     - run: cp -rp coverage build
+
+    - name: Generate Contributors Images
+      uses: jaywcjlove/github-action-contributors@main
+      with:
+        filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+        output: build/CONTRIBUTORS.svg
+        avatarSize: 42
+
+    - name: Create Coverage Badges
+      uses: jaywcjlove/coverage-badges-cli@main
+      with:
+        output: build/badges.svg
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
 
     - run: npm install @jsdevtools/npm-publish -g
     - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
@@ -39,19 +59,6 @@ jobs:
         head-ref: ${{steps.create_tag.outputs.version}}
         filter-author: (小弟调调™|Renovate Bot)
         filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
-    
-    - name: Generate Contributors Images
-      uses: jaywcjlove/github-action-contributors@main
-      with:
-        filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
-        output: build/CONTRIBUTORS.svg
-        avatarSize: 42
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
 
     - name: Create Release
       uses: ncipollo/release-action@v1
