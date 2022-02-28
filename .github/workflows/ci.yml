@@ -1,4 +1,4 @@
-name: Build & Deploy
+name: CI
 on:
   push:
     branches:

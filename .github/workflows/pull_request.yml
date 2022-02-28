@@ -15,3 +15,5 @@ jobs:
     - run: npm run build
     - run: npm run doc
     - run: npm run test:coverage
+    - run: npm run bundle
+    - run: npm run bundle:min
