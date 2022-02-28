@@ -1,6 +1,7 @@
 lib
 cjs
 esm
+dist
 build
 coverage
 node_modules
