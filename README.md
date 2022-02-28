@@ -2,7 +2,13 @@ React Textarea Code Editor
 ===
 <!--rehype:style=display:none;-->
 
-[![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml) [![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/coverage/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report) [![Coverage Status](https://img.shields.io/npm/dm/@uiw/react-textarea-code-editor.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor) [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://bundlephobia.com/package/@uiw/react-textarea-code-editor) [![npm version](https://img.shields.io/npm/v/@uiw/react-textarea-code-editor.svg)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)
+[![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml)
+[![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/coverage/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report)
+[![NPM Download](https://img.shields.io/npm/dm/@uiw/react-textarea-code-editor.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)
+[![jsDelivr CDN](https://data.jsdelivr.com/v1/package/npm/@uiw/react-textarea-code-editor/badge)](https://www.jsdelivr.com/package/npm/@uiw/react-textarea-code-editor)
+[![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor/file/README.md)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://bundlephobia.com/package/@uiw/react-textarea-code-editor)
+[![npm version](https://img.shields.io/npm/v/@uiw/react-textarea-code-editor.svg)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)
 
 A simple code editor with syntax highlighting. This library aims to provide a simple code editor with syntax highlighting support without any of the extra features, perfect for simple embeds and forms where users can submit code.
 
@@ -152,7 +158,7 @@ npm run build
 The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
-## Related
+## See Also
 
 - [@uiw/react-codemirror](https://github.com/uiwjs/react-codemirror): CodeMirror component for React.
 - [@uiw/react-md-editor](https://github.com/uiwjs/react-md-editor): A simple markdown editor with preview, implemented with React.js and TypeScript.
@@ -162,9 +168,13 @@ Your app is ready to be deployed!
 
 ## Contributors
 
+As always, thanks to our amazing contributors!
+
 <a href="https://github.com/uiwjs/react-textarea-code-editor/graphs/contributors">
   <img src="https://uiwjs.github.io/react-textarea-code-editor/CONTRIBUTORS.svg" />
 </a>
+
+Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
 
 ## License
 
