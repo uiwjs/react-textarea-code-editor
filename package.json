@@ -28,6 +28,7 @@
   "license": "MIT",
   "files": [
     "dist.css",
+    "dist",
     "esm",
     "cjs",
     "src"
