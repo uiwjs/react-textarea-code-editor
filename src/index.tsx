@@ -1,4 +1,5 @@
 import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { PluggableList } from 'unified';
 import { processHtml, htmlEncode } from './utils';
 import shortcuts from './shortcuts';
 import * as styles from './styles';
@@ -17,6 +18,11 @@ export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HT
    */
   padding?: number;
   /**
+   * rehypePlugins (Array.<Plugin>, default: `[[rehypePrism, { ignoreMissing: true }]]`)
+   * List of [rehype plugins](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md#list-of-plugins) to use. See the next section for examples on how to pass options
+   */
+  rehypePlugins?: PluggableList;
+  /**
    * The minimum height of the editor. Default: `16`.
    */
   minHeight?: number;
@@ -33,6 +39,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     language,
     className,
     style,
+    rehypePlugins,
     onChange,
     ...other
   } = props;
@@ -55,8 +62,9 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
         `<pre aria-hidden=true><code ${language ? `class="language-${language}"` : ''} >${htmlEncode(
           String(value || ''),
         )}</code><br /></pre>`,
+        rehypePlugins,
       ),
-    [value, language],
+    [value, language, rehypePlugins],
   );
   const preView = useMemo(
     () => (

@@ -1,21 +1,15 @@
+import { PluggableList } from 'unified';
 import { rehype } from 'rehype';
 // @ts-ignore
 import rehypePrism from '@mapbox/rehype-prism';
 
-export const processHtml = (html: string) => {
+export const processHtml = (html: string, plugins: PluggableList = [[rehypePrism, { ignoreMissing: true }]]) => {
   return rehype()
     .data('settings', { fragment: true })
-    .use(rehypePrism, { ignoreMissing: true })
+    .use([...plugins])
     .processSync(`${html}`)
     .toString();
 };
-
-// function htmlEncode(html: string) {
-//   const temp = document.createElement ('div');
-//   (temp.textContent !== undefined) ? (temp.textContent = html) : (temp.innerText = html);
-//   const output = temp.innerHTML;
-//   return output;
-// }
 
 export function htmlEncode(sHtml: string) {
   return sHtml
