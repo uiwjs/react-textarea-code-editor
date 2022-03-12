@@ -14,10 +14,14 @@ jobs:
         node-version: 14
 
     - run: npm install
-    - run: npm i coverage-badges-cli -g
     - run: npm run build
     - run: npm run test:coverage
-    - run: coverage-badges
+
+    - name: Create Coverage Badges
+      uses: jaywcjlove/coverage-badges-cli@main
+      with:
+        output: build/badges.svg
+
     - run: npm run doc
     - run: npm run bundle
     - run: npm run bundle:min
@@ -30,10 +34,16 @@ jobs:
         output: build/CONTRIBUTORS.svg
         avatarSize: 42
 
-    - name: Create Coverage Badges
-      uses: jaywcjlove/coverage-badges-cli@main
+
+    - name: Create Tag
+      id: create_tag
+      uses: jaywcjlove/create-tag-action@v1.3.6
       with:
-        output: build/badges.svg
+        package-path: ./package.json
+
+    - name: get tag version
+      id: tag_version
+      uses: jaywcjlove/changelog-generator@v1.5.0
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -41,19 +51,9 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
 
-    - run: npm install @jsdevtools/npm-publish -g
-    - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
-
-    - name: Create Tag
-      id: create_tag
-      uses: jaywcjlove/create-tag-action@v1.2.1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        package-path: ./package.json
-
     - name: Generate Changelog
       id: changelog
-      uses: jaywcjlove/changelog-generator@v1.4.6
+      uses: jaywcjlove/changelog-generator@v1.5.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         head-ref: ${{steps.create_tag.outputs.version}}
@@ -70,10 +70,17 @@ jobs:
         body: |
           [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://bundlephobia.com/result?p=@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}})
 
+          Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/uiwjs/react-textarea-code-editor/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
+          Comparing Changes: ${{ steps.changelog.outputs.compareurl }} 
+
           ```bash
           npm i @uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}}
           ```
-
-          ${{ steps.changelog.outputs.compareurl }}
           
           ${{ steps.changelog.outputs.changelog }}
+
+    - name: 📦 @uiw/react-textarea-code-editor publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./package.json
