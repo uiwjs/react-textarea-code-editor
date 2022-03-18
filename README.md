@@ -14,6 +14,7 @@ A simple code editor with syntax highlighting. This library aims to provide a si
 
 **`Features:`**
 
+- 🌒 Support dark-mode/night-mode. `@v4`
 - ☕️ Automatic syntax highlighting.
 - 🐲 Automatic indent on new lines.
 - 🩲 Indent line or selected text by pressing tab key, with customizable indentation.
@@ -108,6 +109,32 @@ function HomePage() {
 }
 
 export default HomePage;
+```
+
+## Support dark-mode/night-mode
+
+By default, the [`dark-mode`](https://github.com/jaywcjlove/dark-mode/) is automatically switched according to the system. If you need to switch manually, just set the `data-color-mode="dark"` parameter for html Element. 
+
+```html
+<html data-color-mode="dark">
+```
+
+```js
+document.documentElement.setAttribute('data-color-mode', 'dark')
+document.documentElement.setAttribute('data-color-mode', 'light')
+```
+
+Inherit custom color variables by adding `.w-tc-editor-var` selector.
+
+```jsx
+const Demo = () => {
+  return (
+    <div>
+      <div className="w-tc-editor-var"> </div>
+      <CodeEditor value={code} />
+    </div>
+  )
+}
 ```
 
 ## Props
