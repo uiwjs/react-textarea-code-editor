@@ -1,7 +1,6 @@
 import { PluggableList } from 'unified';
 import { rehype } from 'rehype';
-// @ts-ignore
-import rehypePrism from '@mapbox/rehype-prism';
+import rehypePrism from 'rehype-prism-plus';
 
 export const processHtml = (html: string, plugins: PluggableList = [[rehypePrism, { ignoreMissing: true }]]) => {
   return rehype()
