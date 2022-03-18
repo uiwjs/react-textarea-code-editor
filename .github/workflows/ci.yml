@@ -18,7 +18,7 @@ jobs:
     - run: npm run test:coverage
 
     - name: Create Coverage Badges
-      uses: jaywcjlove/coverage-badges-cli@main
+      uses: jaywcjlove/coverage-badges-cli@v1.0.10
       with:
         output: build/badges.svg
 
@@ -48,6 +48,7 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
+        commit_message: ${{steps.tag_version.outputs.tag}} ${{ github.event.head_commit.message }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
 
