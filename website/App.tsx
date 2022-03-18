@@ -53,7 +53,7 @@ const App: React.FC = () => {
   // @ts-ignore
   const version = VERSION;
   return (
-    <div className="App">
+    <div className="App wmde-markdown-var">
       <dark-mode dark="Dark" light="Light" style={{ position: 'fixed', top: 8, left: 10 }}></dark-mode>
       <GitHubCorners fixed href="https://github.com/uiwjs/react-textarea-code-editor" />
       <h1 className="App-title">
