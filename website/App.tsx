@@ -68,7 +68,6 @@ const App: React.FC = () => {
           minHeight={80}
           placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`}
           style={{
-            backgroundColor: 'var(--color-canvas-subtle)',
             fontSize: 14,
             fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
           }}
