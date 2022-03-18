@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8f7f3dd.css",
-    "main.js": "/static/js/main.c6ea3f53.js",
+    "main.css": "/static/css/main.5f316c07.css",
+    "main.js": "/static/js/main.511abea9.js",
     "code-example-vendor.js": "/static/js/code-example-vendor.e480db3a.chunk.js",
     "refractor-vendor.js": "/static/js/refractor-vendor.360ac348.js",
     "react-vendor.js": "/static/js/react-vendor.0e51bb08.js",
     "index.html": "/index.html",
-    "main.f8f7f3dd.css.map": "/static/css/main.f8f7f3dd.css.map",
-    "main.c6ea3f53.js.map": "/static/js/main.c6ea3f53.js.map",
+    "main.5f316c07.css.map": "/static/css/main.5f316c07.css.map",
+    "main.511abea9.js.map": "/static/js/main.511abea9.js.map",
     "code-example-vendor.e480db3a.chunk.js.map": "/static/js/code-example-vendor.e480db3a.chunk.js.map",
     "refractor-vendor.360ac348.js.map": "/static/js/refractor-vendor.360ac348.js.map",
     "react-vendor.0e51bb08.js.map": "/static/js/react-vendor.0e51bb08.js.map"
@@ -15,7 +15,7 @@
   "entrypoints": [
     "static/js/refractor-vendor.360ac348.js",
     "static/js/react-vendor.0e51bb08.js",
-    "static/css/main.f8f7f3dd.css",
-    "static/js/main.c6ea3f53.js"
+    "static/css/main.5f316c07.css",
+    "static/js/main.511abea9.js"
   ]
 }
