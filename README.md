@@ -14,7 +14,7 @@ A simple code editor with syntax highlighting. This library aims to provide a si
 
 **`Features:`**
 
-- 🌒 Support dark-mode/night-mode. `@v4`
+- 🌒 Support dark-mode/night-mode `@v2`. 
 - ☕️ Automatic syntax highlighting.
 - 🐲 Automatic indent on new lines.
 - 🩲 Indent line or selected text by pressing tab key, with customizable indentation.
