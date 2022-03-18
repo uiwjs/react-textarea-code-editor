@@ -1,5 +1,61 @@
 @w-textarea:~ "w-tc-editor";
 
+@media (prefers-color-scheme: dark) {
+  .@{w-textarea} {
+    color-scheme: dark;
+    --color-prettylights-syntax-comment: #8b949e;
+    --color-prettylights-syntax-entity-tag: #7ee787;
+    --color-prettylights-syntax-entity: #d2a8ff;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+    --color-prettylights-syntax-constant: #79c0ff;
+    --color-prettylights-syntax-string: #a5d6ff;
+    --color-prettylights-syntax-keyword: #ff7b72;
+    --color-prettylights-syntax-markup-bold: #c9d1d9;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .@{w-textarea} {
+    color-scheme: light;
+    --color-prettylights-syntax-comment: #6e7781;
+    --color-prettylights-syntax-entity-tag: #116329;
+    --color-prettylights-syntax-entity: #8250df;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+    --color-prettylights-syntax-constant: #0550ae;
+    --color-prettylights-syntax-string: #0a3069;
+    --color-prettylights-syntax-keyword: #cf222e;
+    --color-prettylights-syntax-markup-bold: #24292f;
+  }
+}
+
+[data-color-mode*='dark'] .@{w-textarea},
+[data-color-mode*='dark'] .@{w-textarea}-var,
+body[data-color-mode*='dark'] {
+  color-scheme: dark;
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-markup-bold: #c9d1d9;
+}
+
+[data-color-mode*='light'] .@{w-textarea},
+[data-color-mode*='light'] .@{w-textarea}-var,
+body[data-color-mode*='light'] {
+  color-scheme: light;
+  --color-prettylights-syntax-comment: #6e7781;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-markup-bold: #24292f;
+}
+
 .@{w-textarea} {
   font-family: inherit;
   font-size: 12px;
@@ -26,10 +82,10 @@
     .token.comment,
     .token.doctype,
     .token.prolog {
-      color: #90a4ae;
+      color: var(--color-prettylights-syntax-comment);
     }
     .token.punctuation {
-      color: #9e9e9e;
+      color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
     }
     .namespace {
       opacity: 0.7;
@@ -40,56 +96,55 @@
     .token.deleted,
     .token.number,
     .token.symbol {
-      color: #e91e63;
+      color: var(--color-prettylights-syntax-entity-tag);
     }
 
-    .token.attr-name,
     .token.builtin,
     .token.char,
     .token.inserted,
     .token.selector,
     .token.string {
-      color: #22863a;
+      color: var(--color-prettylights-syntax-constant);
     }
 
     .style .token.string,
     .token.entity,
+    .token.property,
     .token.operator,
     .token.url {
-      color: #795548;
+      color: var(--color-prettylights-syntax-constant);
     }
 
     .token.atrule,
-    .token.attr-value,
-    .token.attr-name,
-    .token.property,
+    .token.property-access .token.method,
     .token.keyword {
-      color: #3f51b5;
+      color: var(--color-prettylights-syntax-keyword);
     }
 
     .token.function {
-      color: #f44336;
+      color: var(--color-prettylights-syntax-string);
     }
 
     .token.important,
     .token.regex,
     .token.variable {
-      color: #ff9800;
+      color: var(--color-prettylights-syntax-string-regexp);
     }
 
     .token.bold,
     .token.important {
-      color: #333;
+      color: var(--color-prettylights-syntax-markup-bold);
     }
     .token.tag {
-      color: #22863a;
+      color: var(--color-prettylights-syntax-entity-tag);
     }
-    .attr-name {
-      color: #005cc5;
+    .token.attr-value,
+    .token.attr-name {
+      color: var(--color-prettylights-syntax-constant);
     }
     .token.selector .class,
     .token.class-name {
-      color: #6f42c1;
+      color: var(--color-prettylights-syntax-entity);
     }
   }
 }

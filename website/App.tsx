@@ -3,6 +3,7 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import GitHubCorners from '@uiw/react-github-corners';
 import Loader from '@uiw/react-loader';
 import exts from 'code-example/ext.json';
+import '@wcj/dark-mode';
 import TextareaCodeEditor from '../';
 import MDStr from '../README.md';
 import './App.css';
@@ -53,6 +54,7 @@ const App: React.FC = () => {
   const version = VERSION;
   return (
     <div className="App">
+      <dark-mode dark="Dark" light="Light" style={{ position: 'fixed', top: 8, left: 10 }}></dark-mode>
       <GitHubCorners fixed href="https://github.com/uiwjs/react-textarea-code-editor" />
       <h1 className="App-title">
         React Textarea Code Editor
@@ -66,7 +68,7 @@ const App: React.FC = () => {
           minHeight={80}
           placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`}
           style={{
-            backgroundColor: '#f5f5f5',
+            backgroundColor: 'var(--color-canvas-subtle)',
             fontSize: 14,
             fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
           }}
