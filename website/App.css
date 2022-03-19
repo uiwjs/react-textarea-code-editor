@@ -19,8 +19,8 @@ body {
   font-size: 12px;
   font-weight: 400;
   position: absolute;
-  color: var(--color-thme-text);
-  background-color: var(--color-thme-bg);
+  color: var(--color-theme-text);
+  background-color: var(--color-theme-bg);
   padding: 0 3px;
   border-radius: 3px;
   margin-left: 5px;
