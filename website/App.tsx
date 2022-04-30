@@ -74,15 +74,6 @@ const App: React.FC = () => {
           onChange={(evn) => setCode(evn.target.value)}
         />
       </div>
-      <div className="App-editor">
-        <span>Test case</span>
-        <div style={{ display: 'flex', flexDirection: 'row', marginTop: 12 }}>
-          <TextareaCodeEditor placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`} />
-          <button type="button" style={{ marginLeft: 12 }}>
-            Edit
-          </button>
-        </div>
-      </div>
       <div className="App-tools" style={{ marginTop: 5 }}>
         <select value={language} onChange={(evn) => setLanguage(evn.target.value)}>
           {exts.map((keyName, idx) => {
@@ -95,6 +86,15 @@ const App: React.FC = () => {
           })}
         </select>
         <Loader loading={loading} />
+      </div>
+      <div className="App-test-case">
+        <span>Test case</span>
+        <div style={{ display: 'flex', flexDirection: 'row', marginTop: 12 }}>
+          <TextareaCodeEditor placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`} />
+          <button type="button" style={{ marginLeft: 12 }}>
+            Edit
+          </button>
+        </div>
       </div>
       <MarkdownPreview source={MDStr} className="info" />
     </div>
