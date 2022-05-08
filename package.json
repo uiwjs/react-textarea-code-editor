@@ -85,7 +85,7 @@
     "@wcj/dark-mode": "^1.0.13",
     "code-example": "^3.3.1",
     "compile-less-cli": "~1.8.11",
-    "husky": "~7.0.4",
+    "husky": "~8.0.0",
     "kkt": "~7.1.5",
     "lint-staged": "~12.3.4",
     "prettier": "~2.6.0",
