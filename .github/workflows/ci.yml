@@ -114,7 +114,6 @@ jobs:
             { "name": "@uiwjs/react-textarea-code-editor" }
 
       - run: npm publish
-        working-directory: core
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
