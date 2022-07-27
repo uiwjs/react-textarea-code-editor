@@ -1,6 +1,6 @@
 import { rehype } from 'rehype';
 // @ts-ignore
-import rehypePrism from '@mapbox/rehype-prism';
+import rehypePrism from 'rehype-prism-2';
 import refractor from 'refractor';
 
 export const processHtml = (html: string, syntax: refractor.RefractorSyntax | undefined) => {

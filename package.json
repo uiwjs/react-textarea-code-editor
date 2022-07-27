@@ -61,12 +61,12 @@
   },
   "peerDependencies": {
     "@babel/runtime": ">=7.10.0",
-    "react": "file:/home/mertyildiran/Documents/up9/mizu/ui/node_modules/react",
+    "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
   },
   "dependencies": {
     "@babel/runtime": "7.16.7",
-    "@mapbox/rehype-prism": "file:/home/mertyildiran/Downloads/rehype-prism",
+    "rehype-prism-2": "0.8.0",
     "@types/refractor": "^3.0.2",
     "rehype": "12.0.0"
   },
@@ -86,7 +86,7 @@
     "kkt": "7.0.4",
     "lint-staged": "12.1.5",
     "prettier": "2.5.1",
-    "react": "file:/home/mertyildiran/Documents/up9/mizu/ui/node_modules/react",
+    "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-test-renderer": "17.0.2",
     "tsbb": "3.5.4"
