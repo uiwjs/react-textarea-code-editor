@@ -2,7 +2,7 @@ React Textarea Code Editor
 ===
 <!--rehype:style=display:none;-->
 
-[![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml) [![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/coverage/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report) [![Coverage Status](https://img.shields.io/npm/dm/@uiw/react-textarea-code-editor.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor) [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://bundlephobia.com/package/@uiw/react-textarea-code-editor) [![npm version](https://img.shields.io/npm/v/@uiw/react-textarea-code-editor.svg)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)
+[![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml) [![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/coverage/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report) [![Coverage Status](https://img.shields.io/npm/dm/react-textarea-code-editor-2.svg?style=flat)](https://www.npmjs.com/package/react-textarea-code-editor-2) [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/react-textarea-code-editor-2/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-textarea-code-editor-2)](https://bundlephobia.com/package/react-textarea-code-editor-2) [![npm version](https://img.shields.io/npm/v/react-textarea-code-editor-2.svg)](https://www.npmjs.com/package/react-textarea-code-editor-2)
 
 A simple code editor with syntax highlighting. This library aims to provide a simple code editor with syntax highlighting support without any of the extra features, perfect for simple embeds and forms where users can submit code.
 
@@ -17,7 +17,7 @@ A simple code editor with syntax highlighting. This library aims to provide a si
 ## Install
 
 ```bash
-$ npm i @uiw/react-textarea-code-editor
+$ npm i react-textarea-code-editor-2
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ $ npm i @uiw/react-textarea-code-editor
 [![Open in Github gh-pages](https://img.shields.io/badge/Open%20In-Github%20gh--pages-blue?logo=github)](https://uiwjs.github.io/react-textarea-code-editor/)
 
 ```jsx
-import CodeEditor from '@uiw/react-textarea-code-editor';
+import CodeEditor from 'react-textarea-code-editor-2';
 
 function App() {
   const [code, setCode] = React.useState(
@@ -57,7 +57,7 @@ Use examples in nextjs. [#31](https://github.com/uiwjs/react-textarea-code-edito
 
 ```bash
 npm install next-remove-imports
-npm install @uiw/react-textarea-code-editor@v1.4.4
+npm install react-textarea-code-editor-2@v1.4.4
 ```
 
 ```js
@@ -71,10 +71,10 @@ module.exports = removeImports({
 ```jsx
 import React from "react";
 import dynamic from "next/dynamic";
-import "@uiw/react-textarea-code-editor/dist.css";
+import "react-textarea-code-editor-2/dist.css";
 
 const CodeEditor = dynamic(
-  () => import("@uiw/react-textarea-code-editor").then((mod) => mod.default),
+  () => import("react-textarea-code-editor-2").then((mod) => mod.default),
   { ssr: false }
 );
 

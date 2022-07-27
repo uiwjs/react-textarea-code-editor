@@ -54,10 +54,10 @@ jobs:
         name: ${{ steps.create_tag.outputs.version }}
         tag: ${{ steps.create_tag.outputs.version }}
         body: |
-          [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://bundlephobia.com/result?p=@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}})
+          [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/react-textarea-code-editor-2@${{steps.create_tag.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-textarea-code-editor-2)](https://bundlephobia.com/result?p=react-textarea-code-editor-2@${{steps.create_tag.outputs.versionNumber}})
 
           ```bash
-          npm i @uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}}
+          npm i react-textarea-code-editor-2@${{steps.create_tag.outputs.versionNumber}}
           ```
 
           ${{ steps.changelog.outputs.compareurl }}
