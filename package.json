@@ -1,6 +1,6 @@
 {
   "name": "react-textarea-code-editor-2",
-  "version": "1.4.15",
+  "version": "1.4.16",
   "description": "A simple code editor with syntax highlighting.",
   "homepage": "https://uiwjs.github.io/react-textarea-code-editor/",
   "main": "cjs/index.js",
