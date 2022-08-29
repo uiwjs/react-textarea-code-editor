@@ -9,3 +9,5 @@ declare module '*.md' {
   const src: string;
   export default src;
 }
+
+declare var VERSION: string;

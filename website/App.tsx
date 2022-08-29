@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import GitHubCorners from '@uiw/react-github-corners';
 import Loader from '@uiw/react-loader';
+import BackToUp from '@uiw/react-back-to-top';
 import exts from 'code-example/ext.json';
 import '@wcj/dark-mode';
 import TextareaCodeEditor from '../';
@@ -50,15 +51,14 @@ const useFetch = (language: string) => {
 const App: React.FC = () => {
   const [language, setLanguage] = useState('jsx');
   const { lang, loading, code, setCode } = useFetch(language);
-  // @ts-ignore
-  const version = VERSION;
   return (
     <div className="App wmde-markdown-var">
+      <BackToUp>Top</BackToUp>
       <dark-mode dark="Dark" light="Light" style={{ position: 'fixed', top: 8, left: 10 }}></dark-mode>
       <GitHubCorners fixed href="https://github.com/uiwjs/react-textarea-code-editor" />
       <h1 className="App-title">
         React Textarea Code Editor
-        <sup>{version}</sup>
+        <sup>{VERSION}</sup>
       </h1>
       <div className="App-editor">
         <TextareaCodeEditor
