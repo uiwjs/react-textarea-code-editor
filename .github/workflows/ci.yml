@@ -6,12 +6,12 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
-        node-version: 14
+        node-version: 16
 
     - run: npm install
     - run: npm run build
@@ -20,7 +20,7 @@ jobs:
     - run: npm run doc
 
     - name: Create Coverage Badges
-      uses: jaywcjlove/coverage-badges-cli@v1.0.10
+      uses: jaywcjlove/coverage-badges-cli@main
       with:
         output: coverage/badges.svg
 
@@ -38,13 +38,13 @@ jobs:
 
     - name: Create Tag
       id: create_tag
-      uses: jaywcjlove/create-tag-action@v1.3.6
+      uses: jaywcjlove/create-tag-action@main
       with:
         package-path: ./package.json
 
     - name: get tag version
       id: tag_version
-      uses: jaywcjlove/changelog-generator@v1.5.0
+      uses: jaywcjlove/changelog-generator@main
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -55,7 +55,7 @@ jobs:
 
     - name: Generate Changelog
       id: changelog
-      uses: jaywcjlove/changelog-generator@v1.5.0
+      uses: jaywcjlove/changelog-generator@main
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         head-ref: ${{steps.create_tag.outputs.version}}
@@ -91,7 +91,7 @@ jobs:
       successful: ${{steps.create_tag.outputs.successful }}
 
   github-package:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     needs: build-deploy
     if: needs.build-deploy.outputs.successful
     steps:
