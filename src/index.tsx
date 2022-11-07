@@ -45,10 +45,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
   } = props;
 
   const [value, setValue] = useState(props.value || '');
-  useEffect(
-    () => setValue(props.value || ''),
-    [props.value]
-  );
+  useEffect(() => setValue(props.value || ''), [props.value]);
   const textRef = useRef<HTMLTextAreaElement>(null);
   useImperativeHandle<HTMLTextAreaElement, HTMLTextAreaElement>(ref, () => textRef.current!);
 
@@ -63,11 +60,11 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     () =>
       processHtml(
         `<pre aria-hidden=true><code ${language && value ? `class="language-${language}"` : ''} >${htmlEncode(
-          String(value || placeholder || ''),
+          String(value || ''),
         )}</code><br /></pre>`,
         rehypePlugins,
       ),
-    [value, placeholder, language, rehypePlugins],
+    [value, language, rehypePlugins],
   );
   const preView = useMemo(
     () => (
