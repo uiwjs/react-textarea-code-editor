@@ -4,6 +4,32 @@
   "description": "A simple code editor with syntax highlighting.",
   "main": "cjs/index.js",
   "module": "esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./cjs/index.js"
+    },
+    "./index": {
+      "import": "./esm/index.js",
+      "require": "./cjs/index.js"
+    },
+    "./shortcuts": {
+      "import": "./esm/shortcuts.js",
+      "require": "./cjs/shortcuts.js"
+    },
+    "./styles": {
+      "import": "./esm/styles.js",
+      "require": "./cjs/styles.js"
+    },
+    "./SelectionText": {
+      "import": "./esm/SelectionText.js",
+      "require": "./cjs/SelectionText.js"
+    },
+    "./utils": {
+      "import": "./esm/utils.js",
+      "require": "./cjs/utils.js"
+    }
+  },
   "scripts": {
     "prepare": "husky install && npm run build",
     "doc": "kkt build --app-src ./website",
