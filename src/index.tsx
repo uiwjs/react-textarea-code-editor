@@ -85,39 +85,40 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     [prefixCls, language, htmlStr],
   );
 
+  const textareaProps: React.TextareaHTMLAttributes<HTMLTextAreaElement> = {
+    autoComplete: 'off',
+    autoCorrect: 'off',
+    spellCheck: 'false',
+    autoCapitalize: 'off',
+    ...other,
+    placeholder,
+    onKeyDown: (evn) => {
+      if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
+        shortcuts(evn);
+      }
+    },
+    style: {
+      ...styles.editor,
+      ...styles.textarea,
+      ...contentStyle,
+      minHeight,
+      ...(placeholder && !value ? { WebkitTextFillColor: 'inherit' } : {}),
+    },
+    onChange: (evn) => {
+      setValue(evn.target.value);
+      onChange && onChange(evn);
+    },
+    className: `${prefixCls}-text`,
+    value: value,
+  };
+
   return (
     <div
       style={{ ...styles.container, ...style }}
       className={`${prefixCls} ${className || ''}`}
       data-color-mode={dataColorMode}
     >
-      <textarea
-        autoComplete="off"
-        autoCorrect="off"
-        spellCheck="false"
-        autoCapitalize="off"
-        {...other}
-        placeholder={placeholder}
-        onKeyDown={(evn) => {
-          if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
-            shortcuts(evn);
-          }
-        }}
-        style={{
-          ...styles.editor,
-          ...styles.textarea,
-          ...contentStyle,
-          minHeight,
-          ...(placeholder && !value ? { WebkitTextFillColor: 'inherit' } : {}),
-        }}
-        ref={textRef}
-        onChange={(evn) => {
-          setValue(evn.target.value);
-          onChange && onChange(evn);
-        }}
-        className={`${prefixCls}-text`}
-        value={value}
-      />
+      <textarea {...textareaProps} ref={textRef} />
       {preView}
     </div>
   );

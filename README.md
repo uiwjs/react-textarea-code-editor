@@ -137,11 +137,30 @@ const Demo = () => {
 }
 ```
 
+Set (`data-color-mode="dark"`) dark theme.
+
+```jsx
+import CodeEditor from '@uiw/react-textarea-code-editor';
+
+function App() {
+  return (
+    <CodeEditor
+      value="function add(a, b) {\n  return a + b;\n}"
+      data-color-mode="dark"
+    />
+  );
+}
+```
+
 ## Props
 
 ```ts
 interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   prefixCls?: string;
+  /**
+   * Support dark-mode/night-mode
+   */
+  ['data-color-mode']?: 'dark' | 'light';
   /**
    * Set what programming language the code belongs to.
    */
