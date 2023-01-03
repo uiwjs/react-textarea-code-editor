@@ -10,6 +10,10 @@ export * from './SelectionText';
 export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   prefixCls?: string;
   /**
+   * Support dark-mode/night-mode
+   */
+  ['data-color-mode']?: 'dark' | 'light';
+  /**
    * Set what programming language the code belongs to.
    */
   language?: string;
@@ -37,6 +41,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     minHeight = 16,
     placeholder,
     language,
+    'data-color-mode': dataColorMode,
     className,
     style,
     rehypePlugins,
@@ -81,7 +86,11 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
   );
 
   return (
-    <div style={{ ...styles.container, ...style }} className={`${prefixCls} ${className || ''}`}>
+    <div
+      style={{ ...styles.container, ...style }}
+      className={`${prefixCls} ${className || ''}`}
+      data-color-mode={dataColorMode}
+    >
       <textarea
         autoComplete="off"
         autoCorrect="off"
