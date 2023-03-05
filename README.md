@@ -29,7 +29,7 @@ $ npm i @uiw/react-textarea-code-editor
 
 ## Usage
 
-[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-textarea-code-editor-for-example-mcebp?fontsize=14&hidenavigation=1&theme=dark)
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/summer-bush-o3qirc?fontsize=14&hidenavigation=1&theme=dark)
 [![Open in Github gh-pages](https://img.shields.io/badge/Open%20In-Github%20gh--pages-blue?logo=github)](https://uiwjs.github.io/react-textarea-code-editor/)
 
 ```jsx
