@@ -8,16 +8,16 @@
     "prepare": "husky install && npm run build",
     "doc": "kkt build --app-src ./website",
     "start": "kkt start --app-src ./website",
-    "build": "tsbb build && npm run css:build && npm run css:build:dist",
-    "watch": "tsbb watch & npm run css:watch",
+    "build": "tsbb build src/*.tsx --use-babel && npm run css:build && npm run css:build:dist",
+    "watch": "tsbb watch src/*.tsx --use-babel & npm run css:watch",
     "css:build": "compile-less -d src -o esm",
     "css:watch": "compile-less -d src -o esm --watch",
     "css:build:dist": "compile-less -d src --combine dist.css --rm-global",
     "bundle": "ncc build src/index.tsx --target web --filename editor",
     "bundle:min": "ncc build src/index.tsx --target web --filename editor --minify",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,css,md,json}\"",
-    "test": "kkt test --env=jsdom --app-src=./website",
-    "test:coverage": "kkt test --env=jsdom --coverage --app-src=./website --bail"
+    "test": "tsbb test --env=jsdom",
+    "test:coverage": "tsbb test --env=jsdom --coverage --bail"
   },
   "repository": {
     "type": "git",
@@ -93,7 +93,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
-    "tsbb": "^3.7.6"
+    "tsbb": "^4.1.5",
+    "jest": "^29.5.0",
+    "jest-watch-typeahead": "^2.2.2",
+    "jest-environment-jsdom": "~29.5.0",
+    "jest-environment-node": "^29.5.0"
   },
   "eslintConfig": {
     "extends": [
