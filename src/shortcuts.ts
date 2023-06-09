@@ -13,7 +13,11 @@ export default function shortcuts(e: React.KeyboardEvent<HTMLTextAreaElement>) {
   if (code === 'tab') {
     stopPropagation(e);
     if (api.start === api.end) {
-      api.insertText('  ').position(api.start + 2, api.end + 2);
+      if (e.shiftKey) {
+        api.lineStarRemove('  ');
+      } else {
+        api.insertText('  ').position(api.start + 2, api.end + 2);
+      }
     } else if (api.getSelectedValue().indexOf('\n') > -1 && e.shiftKey) {
       api.lineStarRemove('  ');
     } else if (api.getSelectedValue().indexOf('\n') > -1) {
