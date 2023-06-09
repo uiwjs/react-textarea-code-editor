@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.cee60dc7.css",
-    "main.js": "/static/js/main.07b9fbda.js",
-    "code-example-vendor.js": "/static/js/code-example-vendor.2a707266.chunk.js",
-    "refractor-vendor.js": "/static/js/refractor-vendor.7d0e4221.js",
-    "react-vendor.js": "/static/js/react-vendor.afcb94a3.js",
+    "main.css": "/static/css/main.9c5e4e20.css",
+    "main.js": "/static/js/main.435770bb.js",
+    "code-example-vendor.js": "/static/js/code-example-vendor.0a8466ed.chunk.js",
+    "refractor-vendor.js": "/static/js/refractor-vendor.6c222c0e.js",
+    "react-vendor.js": "/static/js/react-vendor.17a134cf.js",
     "index.html": "/index.html",
-    "main.cee60dc7.css.map": "/static/css/main.cee60dc7.css.map",
-    "main.07b9fbda.js.map": "/static/js/main.07b9fbda.js.map",
-    "code-example-vendor.2a707266.chunk.js.map": "/static/js/code-example-vendor.2a707266.chunk.js.map",
-    "refractor-vendor.7d0e4221.js.map": "/static/js/refractor-vendor.7d0e4221.js.map",
-    "react-vendor.afcb94a3.js.map": "/static/js/react-vendor.afcb94a3.js.map"
+    "main.9c5e4e20.css.map": "/static/css/main.9c5e4e20.css.map",
+    "main.435770bb.js.map": "/static/js/main.435770bb.js.map",
+    "code-example-vendor.0a8466ed.chunk.js.map": "/static/js/code-example-vendor.0a8466ed.chunk.js.map",
+    "refractor-vendor.6c222c0e.js.map": "/static/js/refractor-vendor.6c222c0e.js.map",
+    "react-vendor.17a134cf.js.map": "/static/js/react-vendor.17a134cf.js.map"
   },
   "entrypoints": [
-    "static/js/refractor-vendor.7d0e4221.js",
-    "static/js/react-vendor.afcb94a3.js",
-    "static/css/main.cee60dc7.css",
-    "static/js/main.07b9fbda.js"
+    "static/js/refractor-vendor.6c222c0e.js",
+    "static/js/react-vendor.17a134cf.js",
+    "static/css/main.9c5e4e20.css",
+    "static/js/main.435770bb.js"
   ]
 }
