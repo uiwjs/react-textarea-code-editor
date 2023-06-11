@@ -65,6 +65,8 @@ function App() {
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/https-github-com-uiwjs-react-textarea-code-editor-issues-151-nsm7qp?fontsize=14&hidenavigation=1&theme=dark)
 
+List of [rehype plugins](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md#list-of-plugins) to use. 
+
 ```jsx
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import rehypePrism from "rehype-prism-plus";
