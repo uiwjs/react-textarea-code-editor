@@ -27,6 +27,11 @@ A simple code editor with syntax highlighting. This library aims to provide a si
 $ npm i @uiw/react-textarea-code-editor
 ```
 
+## Demo & Document
+
+https://uiwjs.github.io/react-textarea-code-editor/
+
+
 ## Usage
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/summer-bush-o3qirc?fontsize=14&hidenavigation=1&theme=dark)
@@ -58,7 +63,7 @@ function App() {
 
 ## Highlight line or character
 
-[![Open in CodeSandbox](https://codesandbox.io/embed/https-github-com-uiwjs-react-textarea-code-editor-issues-151-nsm7qp?fontsize=14&hidenavigation=1&theme=dark)
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/https-github-com-uiwjs-react-textarea-code-editor-issues-151-nsm7qp?fontsize=14&hidenavigation=1&theme=dark)
 
 ```jsx
 import CodeEditor from '@uiw/react-textarea-code-editor';
@@ -231,11 +236,8 @@ interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextA
   onKeyDown?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void | boolean;
 }
 ```
-List of supported languages can be found [here](https://github.com/wooorm/refractor#syntaxes)
-      
-## Demo
 
-https://uiwjs.github.io/react-textarea-code-editor/
+List of supported languages can be found [here](https://github.com/wooorm/refractor#syntaxes)
 
 ## Development
 
