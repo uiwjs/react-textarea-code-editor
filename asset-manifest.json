@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c5e4e20.css",
-    "main.js": "/static/js/main.1e73f395.js",
-    "code-example-vendor.js": "/static/js/code-example-vendor.0a8466ed.chunk.js",
-    "refractor-vendor.js": "/static/js/refractor-vendor.6c222c0e.js",
-    "react-vendor.js": "/static/js/react-vendor.17a134cf.js",
-    "index.html": "/index.html",
-    "main.9c5e4e20.css.map": "/static/css/main.9c5e4e20.css.map",
-    "main.1e73f395.js.map": "/static/js/main.1e73f395.js.map",
-    "code-example-vendor.0a8466ed.chunk.js.map": "/static/js/code-example-vendor.0a8466ed.chunk.js.map",
-    "refractor-vendor.6c222c0e.js.map": "/static/js/refractor-vendor.6c222c0e.js.map",
-    "react-vendor.17a134cf.js.map": "/static/js/react-vendor.17a134cf.js.map"
+    "main.css": "/react-textarea-code-editor/static/css/main.9c5e4e20.css",
+    "main.js": "/react-textarea-code-editor/static/js/main.85fa1466.js",
+    "code-example-vendor.js": "/react-textarea-code-editor/static/js/code-example-vendor.0a8466ed.chunk.js",
+    "refractor-vendor.js": "/react-textarea-code-editor/static/js/refractor-vendor.6c222c0e.js",
+    "react-vendor.js": "/react-textarea-code-editor/static/js/react-vendor.17a134cf.js",
+    "index.html": "/react-textarea-code-editor/index.html",
+    "main.9c5e4e20.css.map": "/react-textarea-code-editor/static/css/main.9c5e4e20.css.map",
+    "main.85fa1466.js.map": "/react-textarea-code-editor/static/js/main.85fa1466.js.map",
+    "code-example-vendor.0a8466ed.chunk.js.map": "/react-textarea-code-editor/static/js/code-example-vendor.0a8466ed.chunk.js.map",
+    "refractor-vendor.6c222c0e.js.map": "/react-textarea-code-editor/static/js/refractor-vendor.6c222c0e.js.map",
+    "react-vendor.17a134cf.js.map": "/react-textarea-code-editor/static/js/react-vendor.17a134cf.js.map"
   },
   "entrypoints": [
     "static/js/refractor-vendor.6c222c0e.js",
     "static/js/react-vendor.17a134cf.js",
     "static/css/main.9c5e4e20.css",
-    "static/js/main.1e73f395.js"
+    "static/js/main.85fa1466.js"
   ]
 }
