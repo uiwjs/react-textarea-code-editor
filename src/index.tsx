@@ -52,7 +52,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
   const [value, setValue] = useState(props.value || '');
   useEffect(() => setValue(props.value || ''), [props.value]);
   const textRef = useRef<HTMLTextAreaElement>(null);
-  useImperativeHandle<HTMLTextAreaElement, HTMLTextAreaElement>(ref, () => textRef.current!);
+  useImperativeHandle<HTMLTextAreaElement, HTMLTextAreaElement>(ref, () => textRef.current!, [textRef]);
 
   const contentStyle = {
     paddingTop: padding,
