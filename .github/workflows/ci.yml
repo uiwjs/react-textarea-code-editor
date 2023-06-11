@@ -90,31 +90,31 @@ jobs:
     outputs:
       successful: ${{steps.create_tag.outputs.successful }}
 
-  github-package:
-    runs-on: ubuntu-latest
-    needs: build-deploy
-    if: needs.build-deploy.outputs.successful
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com
-          scope: '@uiwjs'
+  # github-package:
+  #   runs-on: ubuntu-latest
+  #   needs: build-deploy
+  #   if: needs.build-deploy.outputs.successful
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
+  #         registry-url: https://npm.pkg.github.com
+  #         scope: '@uiwjs'
 
-      - run: npm install
-      - run: npm run build
+  #     - run: npm install
+  #     - run: npm run build
 
-      - name: "Modify @uiw/react-textarea-code-editor => @uiwjs/react-textarea-code-editor"
-        uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
-        with:
-          path: ./package.json
-          data: |
-            { "name": "@uiwjs/react-textarea-code-editor" }
+  #     - name: "Modify @uiw/react-textarea-code-editor => @uiwjs/react-textarea-code-editor"
+  #       uses: jaywcjlove/github-action-package@main
+  #       if: success() || failure()
+  #       with:
+  #         path: ./package.json
+  #         data: |
+  #           { "name": "@uiwjs/react-textarea-code-editor" }
 
-      - name: 📦 @uiwjs/react-textarea-code-editor publish to NPM
-        run: npm publish
-        continue-on-error: true
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  #     - name: 📦 @uiwjs/react-textarea-code-editor publish to NPM
+  #       run: npm publish
+  #       continue-on-error: true
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
