@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.45% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>21/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.29% </span>
+                <span class="strong">93.1% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>26/27</span>
+                <span class='fraction'>27/29</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -188,7 +188,12 @@
 <a name='L123'></a><a href='#L123'>123</a>
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
-<a name='L126'></a><a href='#L126'>126</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -276,27 +281,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">53x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -400,6 +410,18 @@ export default React.forwardRef&lt;HTMLTextAreaElement, TextareaCodeEditorProps&
     [prefixCls, language, htmlStr],
   );
 &nbsp;
+  const change = (evn: React.ChangeEvent&lt;HTMLTextAreaElement&gt;) =&gt; {
+    setValue(evn.target.value);
+    onChange &amp;&amp; onChange(evn);
+  };
+&nbsp;
+  const keyDown = (evn: React.KeyboardEvent&lt;HTMLTextAreaElement&gt;) =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (other.readOnly) <span class="cstat-no" title="statement not covered" >return;</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
+      shortcuts(evn);
+    }
+  };
+&nbsp;
   const textareaProps: React.TextareaHTMLAttributes&lt;HTMLTextAreaElement&gt; = {
     autoComplete: 'off',
     autoCorrect: 'off',
@@ -407,11 +429,7 @@ export default React.forwardRef&lt;HTMLTextAreaElement, TextareaCodeEditorProps&
     autoCapitalize: 'off',
     ...other,
     placeholder,
-    onKeyDown: (evn) =&gt; {
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
-        shortcuts(evn);
-      }
-    },
+    onKeyDown: keyDown,
     style: {
       ...styles.editor,
       ...styles.textarea,
@@ -419,10 +437,7 @@ export default React.forwardRef&lt;HTMLTextAreaElement, TextareaCodeEditorProps&
       minHeight,
       ...(placeholder &amp;&amp; !value ? { WebkitTextFillColor: 'inherit' } : {}),
     },
-    onChange: (evn) =&gt; {
-      setValue(evn.target.value);
-      onChange &amp;&amp; onChange(evn);
-    },
+    onChange: change,
     className: `${prefixCls}-text`,
     value: value,
   };
@@ -445,7 +460,7 @@ export default React.forwardRef&lt;HTMLTextAreaElement, TextareaCodeEditorProps&
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-11T09:41:09.277Z
+                at 2023-06-23T12:45:05.200Z
             </div>
         <script src="prettify.js"></script>
         <script>
