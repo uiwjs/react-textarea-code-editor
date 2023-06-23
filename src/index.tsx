@@ -85,6 +85,18 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     [prefixCls, language, htmlStr],
   );
 
+  const change = (evn: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setValue(evn.target.value);
+    onChange && onChange(evn);
+  };
+
+  const keyDown = (evn: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (other.readOnly) return;
+    if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
+      shortcuts(evn);
+    }
+  };
+
   const textareaProps: React.TextareaHTMLAttributes<HTMLTextAreaElement> = {
     autoComplete: 'off',
     autoCorrect: 'off',
@@ -92,11 +104,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     autoCapitalize: 'off',
     ...other,
     placeholder,
-    onKeyDown: (evn) => {
-      if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
-        shortcuts(evn);
-      }
-    },
+    onKeyDown: keyDown,
     style: {
       ...styles.editor,
       ...styles.textarea,
@@ -104,10 +112,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
       minHeight,
       ...(placeholder && !value ? { WebkitTextFillColor: 'inherit' } : {}),
     },
-    onChange: (evn) => {
-      setValue(evn.target.value);
-      onChange && onChange(evn);
-    },
+    onChange: change,
     className: `${prefixCls}-text`,
     value: value,
   };
