@@ -23,7 +23,8 @@ jobs:
       - name: Create Coverage Badges
         uses: jaywcjlove/coverage-badges-cli@main
         with:
-          output: core/coverage/badges.svg
+          source: core/coverage/coverage-summary.json
+          output: ./www/build/badges.svg
 
       - run: npm run bundle
       - run: npm run bundle:min
