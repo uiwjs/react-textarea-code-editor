@@ -1,0 +1,55 @@
+{
+  "name": "@uiw/react-textarea-code-editor",
+  "version": "2.1.7",
+  "description": "A simple code editor with syntax highlighting.",
+  "homepage": "https://uiwjs.github.io/react-textarea-code-editor/",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-textarea-code-editor.git"
+  },
+  "author": "Kenny Wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "files": [
+    "dist.css",
+    "dist",
+    "esm",
+    "cjs",
+    "src"
+  ],
+  "keywords": [
+    "react",
+    "textarea",
+    "textarea-editor",
+    "textarea-code-editor",
+    "code-editor",
+    "code",
+    "highlighting",
+    "uiw",
+    "uiwjs",
+    "editor"
+  ],
+  "jest": {
+    "testMatch": [
+      "<rootDir>/src/__test__/*.{ts,tsx}"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/?!(.*)"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  },
+  "peerDependencies": {
+    "@babel/runtime": ">=7.10.0",
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.18.6",
+    "rehype-prism-plus": "1.5.0",
+    "rehype": "~12.0.1"
+  }
+}

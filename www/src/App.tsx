@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import MarkdownPreview from '@uiw/react-markdown-preview';
-import GitHubCorners from '@uiw/react-github-corners';
 import Loader from '@uiw/react-loader';
-import BackToUp from '@uiw/react-back-to-top';
 import exts from 'code-example/ext.json';
 import '@wcj/dark-mode';
-import TextareaCodeEditor from '../';
-import MDStr from '../README.md';
-import './App.css';
+import TextareaCodeEditor from '@uiw/react-textarea-code-editor';
+import { styled } from 'styled-components';
 
 const useFetch = (language: string) => {
   const [code, setCode] = useState('');
@@ -48,19 +44,27 @@ const useFetch = (language: string) => {
   return { lang, loading, code, setCode, error };
 };
 
+const Wrapper = styled.div``;
+const Editor = styled.div`
+  max-width: 593px;
+  height: 260px;
+  overflow: auto;
+`;
+const Tools = styled.div`
+  margin-top: 5px;
+  margin-bottom: 50px !important;
+`;
+const TestCase = styled.div`
+  max-width: 593px;
+  margin: 0 auto;
+`;
+
 const App: React.FC = () => {
   const [language, setLanguage] = useState('jsx');
   const { lang, loading, code, setCode } = useFetch(language);
   return (
-    <div className="App wmde-markdown-var">
-      <BackToUp>Top</BackToUp>
-      <dark-mode dark="Dark" light="Light" style={{ position: 'fixed', top: 8, left: 10 }}></dark-mode>
-      <GitHubCorners fixed href="https://github.com/uiwjs/react-textarea-code-editor" />
-      <h1 className="App-title">
-        React Textarea Code Editor
-        <sup>{VERSION}</sup>
-      </h1>
-      <div className="App-editor">
+    <Wrapper className="wmde-markdown-var">
+      <Editor>
         <TextareaCodeEditor
           autoFocus
           value={code}
@@ -73,8 +77,8 @@ const App: React.FC = () => {
           }}
           onChange={(evn) => setCode(evn.target.value)}
         />
-      </div>
-      <div className="App-tools" style={{ marginTop: 5 }}>
+      </Editor>
+      <Tools>
         <select value={language} onChange={(evn) => setLanguage(evn.target.value)}>
           {exts.map((keyName, idx) => {
             if (/^diff/.test(keyName)) return null;
@@ -86,8 +90,8 @@ const App: React.FC = () => {
           })}
         </select>
         <Loader loading={loading} />
-      </div>
-      <div className="App-test-case">
+      </Tools>
+      <TestCase>
         <span>Test case</span>
         <div style={{ display: 'flex', flexDirection: 'row', marginTop: 12 }}>
           <TextareaCodeEditor placeholder={`Please enter ${(language || '').toLocaleUpperCase()} code.`} />
@@ -95,9 +99,8 @@ const App: React.FC = () => {
             Edit
           </button>
         </div>
-      </div>
-      <MarkdownPreview source={MDStr} className="info" />
-    </div>
+      </TestCase>
+    </Wrapper>
   );
 };
 

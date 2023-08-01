@@ -1,121 +1,51 @@
 {
-  "name": "@uiw/react-textarea-code-editor",
-  "version": "2.1.7",
-  "description": "A simple code editor with syntax highlighting.",
-  "homepage": "https://uiwjs.github.io/react-textarea-code-editor/",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
+  "private": true,
   "scripts": {
-    "prepare": "husky install && npm run build",
-    "doc": "kkt build --app-src ./website",
-    "start": "kkt start --app-src ./website",
-    "build": "tsbb build src/*.tsx --use-babel --cjs cjs && npm run css:build && npm run css:build:dist",
-    "watch": "tsbb watch src/*.tsx --use-babel --cjs cjs & npm run css:watch",
-    "css:build": "compile-less -d src -o esm",
-    "css:watch": "compile-less -d src -o esm --watch",
-    "css:build:dist": "compile-less -d src --combine dist.css --rm-global",
-    "bundle": "ncc build src/index.tsx --target web --filename editor",
-    "bundle:min": "ncc build src/index.tsx --target web --filename editor --minify",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,css,md,json}\"",
-    "test": "tsbb test --env=jsdom",
-    "test:coverage": "tsbb test --env=jsdom --coverage --bail"
+    "watch": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb watch \"src/*.{ts,tsx}\" --use-babel --cjs cjs & npm run css:watch",
+    "build": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb build \"src/*.{ts,tsx}\" --use-babel --cjs cjs && npm run css:build && npm run css:build:dist",
+    "css:build": "lerna exec --scope @uiw/react-textarea-code-editor -- compile-less -d src -o esm",
+    "css:watch": "lerna exec --scope @uiw/react-textarea-code-editor -- compile-less -d src -o esm --watch",
+    "css:build:dist": "lerna exec --scope @uiw/react-textarea-code-editor -- compile-less -d src --combine dist.css --rm-global",
+    "start": "lerna exec --scope website -- npm run start",
+    "doc": "lerna exec --scope website -- npm run build",
+    "bundle": "lerna exec --scope @uiw/react-textarea-code-editor -- ncc build src/index.tsx --target web --filename editor",
+    "bundle:min": "lerna exec --scope @uiw/react-textarea-code-editor -- ncc build src/index.tsx --target web --filename editor --minify",
+    "test": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb test --env=jsdom",
+    "coverage": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb test --env=jsdom --coverage --bail",
+    "prepare": "husky install",
+    "publish": "lerna publish from-package --yes --no-verify-access",
+    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "remove": "npm run clean && lerna exec \"rm -rf package-lock.json\" --scope @uiw/react-textarea-code-editor --scope website",
+    "clean": "lerna clean --yes"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uiwjs/react-textarea-code-editor.git"
-  },
-  "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
-  "files": [
-    "dist.css",
-    "dist",
-    "esm",
-    "cjs",
-    "src"
+  "workspaces": [
+    "core",
+    "www"
   ],
-  "lint-staged": {
-    "*.{js,jsx,tsx,ts,less,css,md,json}": [
-      "prettier --write"
-    ]
+  "engines": {
+    "node": ">=16.0.0"
   },
-  "keywords": [
-    "react",
-    "textarea",
-    "textarea-editor",
-    "textarea-code-editor",
-    "code-editor",
-    "code",
-    "highlighting",
-    "uiw",
-    "uiwjs",
-    "editor"
-  ],
-  "jest": {
-    "testMatch": [
-      "<rootDir>/src/__test__/*.{ts,tsx}"
-    ],
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/?!(.*)"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "json-summary"
-    ]
-  },
-  "peerDependencies": {
-    "@babel/runtime": ">=7.10.0",
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.18.6",
-    "rehype-prism-plus": "1.5.0",
-    "rehype": "~12.0.1"
+  "overrides": {
+    "typescript": "^5.1.3"
   },
   "devDependencies": {
-    "@kkt/less-modules": "^7.2.0",
-    "@kkt/ncc": "^1.0.14",
-    "@kkt/raw-modules": "^7.2.0",
-    "@kkt/scope-plugin-options": "^7.2.0",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
     "@types/react-test-renderer": "^18.0.0",
-    "@uiw/react-back-to-top": "^1.2.0",
-    "@uiw/react-github-corners": "^1.5.14",
-    "@uiw/react-loader": "^4.21.14",
-    "@uiw/react-markdown-preview": "^4.0.22",
-    "@wcj/dark-mode": "^1.0.14",
-    "code-example": "^3.3.6",
-    "compile-less-cli": "^1.8.13",
-    "husky": "^8.0.1",
-    "kkt": "^7.2.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-test-renderer": "^18.2.0",
-    "tsbb": "^4.1.5",
+    "@kkt/scope-plugin-options": "^7.5.2",
+    "@kkt/less-modules": "^7.5.2",
+    "@kkt/ncc": "^1.0.14",
+    "compile-less-cli": "^1.8.14",
+    "husky": "^8.0.3",
     "jest": "^29.5.0",
     "jest-watch-typeahead": "^2.2.2",
     "jest-environment-jsdom": "~29.5.0",
-    "jest-environment-node": "^29.5.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "jest-environment-node": "^29.5.0",
+    "kkt": "^7.5.2",
+    "lint-staged": "^13.2.0",
+    "lerna": "^7.1.3",
+    "prettier": "^3.0.0",
+    "react-test-renderer": "^18.2.0",
+    "tsbb": "^4.1.14"
   }
 }

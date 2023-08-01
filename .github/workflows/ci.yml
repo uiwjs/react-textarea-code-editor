@@ -16,31 +16,32 @@ jobs:
 
       - run: npm install
       - run: npm run build
-      - run: npm run test:coverage
+      - run: npm run coverage
 
       - run: npm run doc
 
       - name: Create Coverage Badges
         uses: jaywcjlove/coverage-badges-cli@main
         with:
-          output: coverage/badges.svg
+          output: core/coverage/badges.svg
 
       - run: npm run bundle
       - run: npm run bundle:min
-      - run: cp -rp coverage build
+      - run: cp -rp coverage ../www/build
+        working-directory: core
 
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@main
         with:
           filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
-          output: build/CONTRIBUTORS.svg
+          output: www/build/CONTRIBUTORS.svg
           avatarSize: 42
 
       - name: Create Tag
         id: create_tag
         uses: jaywcjlove/create-tag-action@main
         with:
-          package-path: ./package.json
+          package-path: ./core/package.json
 
       - name: get tag version
         id: tag_version
@@ -51,7 +52,7 @@ jobs:
         with:
           commit_message: ${{steps.tag_version.outputs.tag}} ${{ github.event.head_commit.message }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./www/build
 
       - name: Generate Changelog
         id: changelog
@@ -84,11 +85,12 @@ jobs:
       - name: 📦 @uiw/react-textarea-code-editor publish to NPM
         run: npm publish
         continue-on-error: true
+        working-directory: core
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
-    outputs:
-      successful: ${{steps.create_tag.outputs.successful }}
+    # outputs:
+    #   successful: ${{steps.create_tag.outputs.successful }}
 
   # github-package:
   #   runs-on: ubuntu-latest
