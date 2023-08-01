@@ -16,7 +16,7 @@ root.render(
     description="A simple code editor with syntax highlighting."
     version={`v${VERSION}`}
   >
-    <Github href="https://github.com/uiwjs/react-json-view" />
+    <Github href="https://github.com/uiwjs/react-textarea-code-editor" />
     <Example>
       <App />
     </Example>
