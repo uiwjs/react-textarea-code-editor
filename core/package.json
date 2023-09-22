@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-textarea-code-editor",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "A simple code editor with syntax highlighting.",
   "homepage": "https://uiwjs.github.io/react-textarea-code-editor/",
   "main": "cjs/index.js",
@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.6",
-    "rehype-prism-plus": "1.6.3",
-    "rehype": "~12.0.1"
+    "rehype": "~12.0.1",
+    "rehype-prism-plus": "1.6.3"
   }
 }

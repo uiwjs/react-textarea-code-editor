@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "preview": true,
   "scripts": {
     "build": "kkt build",
@@ -8,13 +8,13 @@
     "map": "source-map-explorer build/static/js/*.js --html build/website-result.html"
   },
   "dependencies": {
-    "@uiw/react-textarea-code-editor": "2.1.7",
-    "@uiw/react-markdown-preview-example": "^1.5.7",
     "@uiw/react-loader": "^4.21.14",
-    "styled-components": "^6.0.5",
+    "@uiw/react-markdown-preview-example": "^1.5.7",
+    "@uiw/react-textarea-code-editor": "2.1.8",
     "code-example": "^3.3.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.5"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

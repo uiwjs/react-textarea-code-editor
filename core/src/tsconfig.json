@@ -1,8 +1,0 @@
-{
-  "extends": "../tsconfig",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "../cjs",
-    "noEmit": false
-  }
-}
