@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "preview": true,
   "scripts": {
     "build": "kkt build",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@uiw/react-loader": "^4.21.14",
     "@uiw/react-markdown-preview-example": "^1.5.7",
-    "@uiw/react-textarea-code-editor": "2.1.8",
+    "@uiw/react-textarea-code-editor": "2.1.9",
     "code-example": "^3.3.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
