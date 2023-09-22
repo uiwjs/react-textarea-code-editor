@@ -86,6 +86,11 @@ jobs:
             
             ${{ steps.changelog.outputs.changelog }}
 
+      - name: package.json info
+        uses: jaywcjlove/github-action-package@main
+        with:
+          unset: jest
+          
       - name: 📦 @uiw/react-textarea-code-editor publish to NPM
         run: npm publish --access public --provenance
         continue-on-error: true
