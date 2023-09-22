@@ -1,7 +1,6 @@
-/* eslint-disable jest/no-conditional-expect */
 import React, { useEffect, useRef } from 'react';
 import TestRenderer from 'react-test-renderer';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import TextareaCodeEditor from '../';
@@ -180,13 +179,15 @@ it('TextareaCodeEditor onKeyDown Tab Input', async () => {
   const elmTextarea = screen.getByDisplayValue('This is a bad example');
   (elmTextarea as HTMLTextAreaElement).setSelectionRange(1, 1);
   elmTextarea.focus();
-  await userEvent.keyboard('a');
-  expect(onKeyDown).toHaveBeenCalledTimes(1);
-  // expect(onKeyDown.mock.calls[0][0]).toHaveProperty('keyCode', 97);
+  await waitFor(async () => {
+    await userEvent.keyboard('a');
+    expect(onKeyDown).toHaveBeenCalledTimes(1);
+    // expect(onKeyDown.mock.calls[0][0]).toHaveProperty('keyCode', 97);
+    await userEvent.keyboard('[Enter]');
+    expect(onKeyDown).toHaveBeenCalledTimes(2);
+    // expect(onKeyDown.mock.calls[1][0]).toHaveProperty('keyCode', 13);
+  });
 
-  await userEvent.keyboard('[Enter]');
-  expect(onKeyDown).toHaveBeenCalledTimes(2);
-  // expect(onKeyDown.mock.calls[1][0]).toHaveProperty('keyCode', 13);
   elmTextarea.focus();
   expect(elmTextarea).toHaveValue('Ta\nhis is a bad example');
 

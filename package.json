@@ -10,8 +10,8 @@
     "doc": "lerna exec --scope website -- npm run build",
     "bundle": "lerna exec --scope @uiw/react-textarea-code-editor -- ncc build src/index.tsx --target web --filename editor",
     "bundle:min": "lerna exec --scope @uiw/react-textarea-code-editor -- ncc build src/index.tsx --target web --filename editor --minify",
-    "test": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb test --env=jsdom",
-    "coverage": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb test --env=jsdom --coverage --bail",
+    "test": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb test",
+    "coverage": "lerna exec --scope @uiw/react-textarea-code-editor -- tsbb test --coverage --bail",
     "prepare": "husky install",
     "publish": "lerna publish from-package --yes --no-verify-access",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
@@ -35,17 +35,13 @@
     "@kkt/scope-plugin-options": "^7.5.2",
     "@kkt/less-modules": "^7.5.2",
     "@kkt/ncc": "^1.0.14",
-    "compile-less-cli": "^1.8.14",
+    "compile-less-cli": "^1.9.0",
     "husky": "^8.0.3",
-    "jest": "^29.5.0",
-    "jest-watch-typeahead": "^2.2.2",
-    "jest-environment-jsdom": "~29.5.0",
-    "jest-environment-node": "^29.5.0",
     "kkt": "^7.5.2",
     "lint-staged": "^14.0.0",
     "lerna": "^7.1.3",
     "prettier": "^3.0.0",
     "react-test-renderer": "^18.2.0",
-    "tsbb": "^4.1.14"
+    "tsbb": "^4.2.1"
   }
 }
