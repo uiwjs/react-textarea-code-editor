@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.16345764.css",
-    "main.js": "/static/js/main.7c6943f6.js",
+    "main.js": "/static/js/main.1aa8de7c.js",
     "code-example-vendor.js": "/static/js/code-example-vendor.c4ded3df.chunk.js",
     "refractor-vendor.js": "/static/js/refractor-vendor.13ae803d.js",
-    "react-vendor.js": "/static/js/react-vendor.319fe26d.js",
+    "react-vendor.js": "/static/js/react-vendor.9229fe00.js",
     "index.html": "/index.html",
     "main.16345764.css.map": "/static/css/main.16345764.css.map",
-    "main.7c6943f6.js.map": "/static/js/main.7c6943f6.js.map",
+    "main.1aa8de7c.js.map": "/static/js/main.1aa8de7c.js.map",
     "code-example-vendor.c4ded3df.chunk.js.map": "/static/js/code-example-vendor.c4ded3df.chunk.js.map",
     "refractor-vendor.13ae803d.js.map": "/static/js/refractor-vendor.13ae803d.js.map",
-    "react-vendor.319fe26d.js.map": "/static/js/react-vendor.319fe26d.js.map"
+    "react-vendor.9229fe00.js.map": "/static/js/react-vendor.9229fe00.js.map"
   },
   "entrypoints": [
     "static/js/refractor-vendor.13ae803d.js",
-    "static/js/react-vendor.319fe26d.js",
+    "static/js/react-vendor.9229fe00.js",
     "static/css/main.16345764.css",
-    "static/js/main.7c6943f6.js"
+    "static/js/main.1aa8de7c.js"
   ]
 }
