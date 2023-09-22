@@ -3,7 +3,7 @@ React Textarea Code Editor
 <!--rehype:style=display:none;-->
 
 [![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml)
-[![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/coverage/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report)
+[![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report)
 [![NPM Download](https://img.shields.io/npm/dm/@uiw/react-textarea-code-editor.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)
 [![jsDelivr CDN](https://data.jsdelivr.com/v1/package/npm/@uiw/react-textarea-code-editor/badge)](https://www.jsdelivr.com/package/npm/@uiw/react-textarea-code-editor)
 [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor/file/README.md)
