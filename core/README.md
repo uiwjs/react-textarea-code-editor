@@ -2,6 +2,7 @@ React Textarea Code Editor
 ===
 <!--rehype:style=display:none;-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml)
 [![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report)
 [![NPM Download](https://img.shields.io/npm/dm/@uiw/react-textarea-code-editor.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)

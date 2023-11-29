@@ -75,7 +75,7 @@ jobs:
           name: ${{ steps.create_tag.outputs.version }}
           tag: ${{ steps.create_tag.outputs.version }}
           body: |
-            [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://bundlephobia.com/result?p=@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}})
+            [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor) [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-textarea-code-editor)](https://bundlephobia.com/result?p=@uiw/react-textarea-code-editor@${{steps.create_tag.outputs.versionNumber}})
 
             Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/uiwjs/react-textarea-code-editor/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
             Comparing Changes: ${{ steps.changelog.outputs.compareurl }} 
