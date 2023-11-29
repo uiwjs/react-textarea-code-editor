@@ -114,6 +114,34 @@ function App() {
 }
 ```
 
+## Remove Code Highlight
+
+The following example can help you exclude code highlighting code from being included in the bundle. `@uiw/react-textarea-code-editor/nohighlight` component does not contain the ~~`rehype-prism-plus`~~ code highlighting package.
+
+```jsx
+import React, { useState } from "react";
+import CodeEditor from '@uiw/react-textarea-code-editor/nohighlight';
+
+export default function App() {
+  const [code, setCode] = useState(
+    `function add(a, b) {\n  return a + b;\n}`
+  );
+  return (
+    <CodeEditor
+      value={code}
+      language="js"
+      placeholder="Please enter JS code."
+      onChange={(evn) => setCode(evn.target.value)}
+      padding={15}
+      style={{
+        backgroundColor: "#f5f5f5",
+        fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+      }}
+    />
+  );
+}
+```
+
 ## Support Nextjs
 
 Use examples in nextjs. [#31](https://github.com/uiwjs/react-textarea-code-editor/issues/31#issuecomment-909363339)

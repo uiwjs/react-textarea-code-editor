@@ -6,6 +6,21 @@
   "funding": "https://jaywcjlove.github.io/#/sponsor",
   "main": "cjs/index.js",
   "module": "esm/index.js",
+  "exports": {
+    "./README.md": "./README.md",
+    "./package.json": "./package.json",
+    "./dist.css": "./dist.css",
+    ".": {
+      "import": "./esm/index.js",
+      "types": "./cjs/index.d.ts",
+      "require": "./cjs/index.js"
+    },
+    "./nohighlight": {
+      "import": "./esm/index.nohighlight.js",
+      "types": "./cjs/index.nohighlight.d.ts",
+      "require": "./cjs/index.nohighlight.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/uiwjs/react-textarea-code-editor.git"
