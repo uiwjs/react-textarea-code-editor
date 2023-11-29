@@ -22,6 +22,7 @@ export default (conf: WebpackConfiguration, env: 'development' | 'production', o
     }),
   );
   conf.module!.exprContextCritical = false;
+  conf.ignoreWarnings = [{ module: /node_modules[\\/]parse5[\\/]/ }];
   if (env === 'production') {
     conf.optimization = {
       ...conf.optimization,
