@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-textarea-code-editor",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A simple code editor with syntax highlighting.",
   "homepage": "https://uiwjs.github.io/react-textarea-code-editor/",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -28,6 +28,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "files": [
+    "nohighlight.d.ts",
     "dist.css",
     "dist",
     "esm",
@@ -36,7 +37,6 @@
   ],
   "keywords": [
     "react",
-    "nohighlight.d.ts",
     "textarea",
     "textarea-editor",
     "textarea-code-editor",
