@@ -36,6 +36,7 @@
   ],
   "keywords": [
     "react",
+    "nohighlight.d.ts",
     "textarea",
     "textarea-editor",
     "textarea-code-editor",
