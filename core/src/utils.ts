@@ -1,8 +1,11 @@
-import { PluggableList } from 'unified';
+import { PluggableList, Pluggable } from 'unified';
 import { rehype } from 'rehype';
 import rehypePrism from 'rehype-prism-plus';
 
-export const processHtml = (html: string, plugins: PluggableList = [[rehypePrism, { ignoreMissing: true }]]) => {
+export const processHtml = (
+  html: string,
+  plugins: PluggableList = [[rehypePrism, { ignoreMissing: true }]] as Pluggable[],
+) => {
   return rehype()
     .data('settings', { fragment: true })
     .use([...plugins])
