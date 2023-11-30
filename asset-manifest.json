@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.16345764.css",
-    "main.js": "/static/js/main.e33bab04.js",
+    "main.js": "/static/js/main.4d65e4ed.js",
     "code-example-vendor.js": "/static/js/code-example-vendor.327df356.chunk.js",
     "refractor-vendor.js": "/static/js/refractor-vendor.e49f0629.js",
     "react-vendor.js": "/static/js/react-vendor.e0136f04.js",
     "index.html": "/index.html",
     "main.16345764.css.map": "/static/css/main.16345764.css.map",
-    "main.e33bab04.js.map": "/static/js/main.e33bab04.js.map",
+    "main.4d65e4ed.js.map": "/static/js/main.4d65e4ed.js.map",
     "code-example-vendor.327df356.chunk.js.map": "/static/js/code-example-vendor.327df356.chunk.js.map",
     "refractor-vendor.e49f0629.js.map": "/static/js/refractor-vendor.e49f0629.js.map",
     "react-vendor.e0136f04.js.map": "/static/js/react-vendor.e0136f04.js.map"
@@ -16,6 +16,6 @@
     "static/js/refractor-vendor.e49f0629.js",
     "static/js/react-vendor.e0136f04.js",
     "static/css/main.16345764.css",
-    "static/js/main.e33bab04.js"
+    "static/js/main.4d65e4ed.js"
   ]
 }
