@@ -16,6 +16,14 @@ root.render(
     description="A simple code editor with syntax highlighting."
     version={`v${VERSION}`}
   >
+    <MarkdownPreviewExample.NavMenu
+      title="Textarea Code Editor"
+      menus={[
+        <a target="_blank" href="https://jaywcjlove.github.io/#/sponsor" rel="noopener noreferrer">
+          Sponsor
+        </a>,
+      ]}
+    />
     <Github href="https://github.com/uiwjs/react-textarea-code-editor" />
     <Example>
       <App />
