@@ -294,6 +294,10 @@ interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HTMLTextA
    */
   minHeight?: number;
   onKeyDown?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void | boolean;
+  /**
+   * The number of spaces for indentation when pressing tab key. Default: `2`.
+   */
+  indentWidth?: number
 }
 ```
 
