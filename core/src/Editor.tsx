@@ -31,6 +31,10 @@ export interface TextareaCodeEditorProps extends React.TextareaHTMLAttributes<HT
    */
   minHeight?: number;
   onKeyDown?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void | boolean;
+  /**
+   * The number of spaces for indentation when pressing tab key. Default: `2`.
+   */
+  indentWidth?: number;
 }
 
 export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((props, ref) => {
@@ -46,6 +50,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
     style,
     rehypePlugins,
     onChange,
+    indentWidth = 2,
     ...other
   } = props;
 
@@ -93,7 +98,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
   const keyDown = (evn: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (other.readOnly) return;
     if (!other.onKeyDown || other.onKeyDown(evn) !== false) {
-      shortcuts(evn);
+      shortcuts(evn, indentWidth);
     }
   };
 
