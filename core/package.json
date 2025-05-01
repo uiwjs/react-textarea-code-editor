@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-textarea-code-editor",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A simple code editor with syntax highlighting.",
   "homepage": "https://uiwjs.github.io/react-textarea-code-editor/",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
