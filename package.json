@@ -42,6 +42,6 @@
     "lerna": "^7.1.3",
     "prettier": "^3.0.0",
     "react-test-renderer": "^18.2.0",
-    "tsbb": "^4.2.1"
+    "tsbb": "^4.5.1"
   }
 }
