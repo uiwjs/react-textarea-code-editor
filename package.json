@@ -36,7 +36,7 @@
     "@kkt/less-modules": "^7.5.2",
     "@kkt/ncc": "^1.0.14",
     "compile-less-cli": "^1.9.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.0",
     "kkt": "^7.5.2",
     "lint-staged": "^14.0.0",
     "lerna": "8.0.0",
