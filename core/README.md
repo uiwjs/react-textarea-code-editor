@@ -33,6 +33,7 @@
   <a target="_blank" href="https://apps.apple.com/app/6470879005" title="Symbol Scribe for macOS"><img alt="Symbol Scribe" height="52" width="52" src="https://wangchujiang.com/appicon/symbol-scribe.png"></a>
   <br/><br/><br/>
 </div>
+<hr>
 
 React Textarea Code Editor
 ===
