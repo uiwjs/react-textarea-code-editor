@@ -1,4 +1,4 @@
-<div align="center" markdown="1">
+<div markdown="1">
   <sup>Using <a href="https://wangchujiang.com/#/app" target="_blank">my app</a> is also a way to <a href="https://wangchujiang.com/#/sponsor" target="_blank">support</a> me:</sup>
   <br />
   <a target="_blank" href="https://apps.apple.com/app/6758053530" title="Scap: Screenshot & Markup Edit for macOS"><img alt="Scap: Screenshot & Markup Edit" height="52" width="52" src="https://wangchujiang.com/appicon/scap.png"></a>
@@ -41,7 +41,8 @@ React Textarea Code Editor
 ===
 <!--rehype:style=display:none;-->
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://jaywcjlove.github.io/#/sponsor)
+[![Follow On X](https://img.shields.io/badge/Follow%20on%20X-333333?logo=x&logoColor=white)](https://x.com/jaywcjlove)
 [![Build & Deploy](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-textarea-code-editor/actions/workflows/ci.yml)
 [![Coverage Status](https://uiwjs.github.io/react-textarea-code-editor/badges.svg)](https://uiwjs.github.io/react-textarea-code-editor/coverage/lcov-report)
 [![NPM Download](https://img.shields.io/npm/dm/@uiw/react-textarea-code-editor.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-textarea-code-editor)
