@@ -87,7 +87,7 @@ export default React.forwardRef<HTMLTextAreaElement, TextareaCodeEditorProps>((p
       />
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [prefixCls, language, htmlStr],
+    [prefixCls, language, htmlStr, padding, minHeight],
   );
 
   const change = (evn: React.ChangeEvent<HTMLTextAreaElement>) => {

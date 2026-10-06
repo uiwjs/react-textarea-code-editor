@@ -102,6 +102,42 @@ it('TextareaCodeEditor language="html"', async () => {
   }
 });
 
+it('TextareaCodeEditor keeps preview padding in sync when padding changes', () => {
+  const props = { language: 'js', value: 'const value = 1;' };
+  const { rerender } = render(<TextareaCodeEditor {...props} padding={10} />);
+  const textbox = screen.getByRole('textbox');
+  // eslint-disable-next-line testing-library/no-node-access
+  const preview = textbox.nextElementSibling;
+
+  for (const padding of [10, 24, 0, undefined]) {
+    rerender(<TextareaCodeEditor {...props} padding={padding} />);
+    const expectedPadding = `${padding ?? 10}px`;
+    const expectedStyle = {
+      paddingTop: expectedPadding,
+      paddingRight: expectedPadding,
+      paddingBottom: expectedPadding,
+      paddingLeft: expectedPadding,
+    };
+    expect(textbox).toHaveStyle(expectedStyle);
+    expect(preview).toHaveStyle(expectedStyle);
+  }
+});
+
+it('TextareaCodeEditor keeps preview minHeight in sync when minHeight changes', () => {
+  const props = { language: 'js', value: 'const value = 1;' };
+  const { rerender } = render(<TextareaCodeEditor {...props} minHeight={16} />);
+  const textbox = screen.getByRole('textbox');
+  // eslint-disable-next-line testing-library/no-node-access
+  const preview = textbox.nextElementSibling;
+
+  for (const minHeight of [16, 120, undefined]) {
+    rerender(<TextareaCodeEditor {...props} minHeight={minHeight} />);
+    const expectedStyle = { minHeight: `${minHeight ?? 16}px` };
+    expect(textbox).toHaveStyle(expectedStyle);
+    expect(preview).toHaveStyle(expectedStyle);
+  }
+});
+
 it('TextareaCodeEditor onChange 1', async () => {
   const MyComponent = () => {
     const txtRef = useRef<HTMLTextAreaElement>(null);
