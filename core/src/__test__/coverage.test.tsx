@@ -81,12 +81,8 @@ it('processHtml uses an empty plugin list by default', () => {
   expect(processHtml('<span>ok</span>')).toBe(processHtml('<span>ok</span>', []));
 });
 
-it('htmlEncode escapes characters inside fenced code blocks', () => {
-  const encoded = htmlEncode('```tsx\nconst x = "<div>&";\n```');
-  expect(encoded).toContain('&amp;lt;');
-  expect(encoded).toContain('&amp;quot;');
-  expect(encoded).toContain('&amp;amp;');
-  expect(encoded.startsWith('```tsx')).toBe(true);
+it('htmlEncode escapes markup once, including text inside fenced code blocks', () => {
+  expect(htmlEncode('```tsx\nconst x = "<div>&";\n```')).toBe('```tsx\nconst x = &quot;&lt;div>&amp;&quot;;\n```');
 });
 
 it('shortcuts uses nativeEvent.code and the default indent width', () => {
